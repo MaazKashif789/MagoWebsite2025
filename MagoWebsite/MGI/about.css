@@ -1,0 +1,184 @@
+/* HERO */
+#aboutHero{
+    height: 50vh;
+    background: url('images/office2.jpg');
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#aboutHero h1{
+    font-size: 2.2rem;
+    padding: 4rem;
+    width: 70%;
+}
+
+
+/* ABOUT */
+
+
+#aboutus { 
+padding: 2rem;
+}
+
+#aboutus h1{
+    color: #29C702;
+    padding: 2rem;
+}
+
+#aboutus div{
+    padding: 2rem 2rem;
+    border-left: 1px solid #29C702;
+}
+
+
+/* EVERYTHING ELSE */
+
+
+#allabout{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+.section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem;
+}
+
+.section h1, #aboutus h1{
+    font-size: 2rem; 
+}
+
+.section h1{
+    padding: 1rem 0;
+}
+
+
+#productabt .img{
+    background: url('images/img\ 3.jpg');
+    background-size: cover;
+    background-position-x: 70%;
+}
+
+.cntnt{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 4rem;
+}
+
+.cntnt h1{
+    color: #29C702;
+}
+
+.cntnt p{
+    padding: 1rem 0;
+}
+
+
+.cntnt ul{
+    list-style: none;
+}
+
+.cntnt a{
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, rgba(41,199,2,1) 0%, rgba(37,177,2,1) 100%);
+    border-radius: 20px;
+    width: 120px;
+    text-align: center;
+    transition: background-color 0.25s ease-in;
+}
+
+.cntnt a:hover{
+    background: #252525;
+
+}
+
+
+.c2{
+    background: url('images/whymago.jpeg') no-repeat;
+    background-size: cover;
+    background-position: top;
+
+}
+
+.c3{
+    background: url('images/containers.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.c4{
+    background: url('images/team.jpeg') no-repeat;
+    background-size: cover;
+    background-position: top;
+
+}
+
+.c4 h2{
+    font-size: 1.3rem;
+}
+
+#team h3{
+    font-size: 1rem;
+    padding: 0.5rem 0;
+
+
+}
+
+#team p{
+    padding: 0.8rem 0;
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 960px){
+    .section{
+        grid-template-columns: 1fr;
+    }
+
+    #allabout{
+        display: block;
+    }
+
+    .img{
+        grid-row: 1 / 2;
+        height: 30vh;
+    }
+
+    .cntnt{
+        padding: 2rem 0;
+     }
+
+}
+
+
+@media screen and (max-width: 450px){
+    
+h1{
+    font-size: 1.5rem;
+}
+
+
+#aboutHero h1{
+    font-size: 1.5rem;
+    padding: 4rem;
+    width: 100%;
+}
+
+.section{
+    padding: 2rem;
+}
+}

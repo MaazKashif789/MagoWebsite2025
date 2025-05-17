@@ -1,0 +1,306 @@
+#prdhero{
+}
+
+
+.heroimg{
+    background: url('images/truckbg2.jpg');
+    background-size: cover;
+    background-position-y:30%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.heroimg h1{
+    font-size: 2.2rem;
+    width: 80%;
+    color: white;
+    padding: 4rem;
+}
+
+.herocnt{
+    padding: 2rem;
+    border-left: 1px solid #29C702;
+    margin: 2rem;
+}
+
+
+.herocnt h1{
+    color: #29C702;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.herocnt p{
+    padding: 0.5rem 0;
+   
+}
+
+.herocnt a{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(41,199,2,1) 0%, rgba(37,177,2,1) 100%);
+    border-radius: 20px;
+    width: 120px;
+    text-align: center;
+    transition: background-color 0.25s ease-in;
+}
+
+.herocnt a:hover{
+    background: #252525;
+
+}
+    
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.cntnt{
+    padding: 4rem;
+}
+
+.cntnt h1{
+    color: #29c702;
+    font-size: 1.8rem;
+}
+
+.cntnt p{
+    padding: 1rem 0;
+}
+
+.cntnt ul{
+    list-style: none;
+}
+
+.cntnt ul{
+    list-style: none;
+}
+
+.cntnt ul li{
+    padding: 0.2rem 0;
+}
+
+.cntnt ul li:nth-child(1){
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.im{
+    height: 200px;
+    align-self: top;
+    width: 90%;
+    justify-self: center;
+}
+
+.grades{
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grades ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.heading{
+    min-height: 150px;
+}
+
+
+.grades ul li a{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, rgba(41,199,2,1) 0%, rgba(37,177,2,1) 100%);
+    width: 120px;
+    text-align: center;
+    transition: background-color 0.25s ease-in;
+}
+
+.a{
+    margin: 1rem 0;
+}
+
+.grades ul li a:hover{
+    background: #252525;
+
+}
+
+
+
+
+.im1{
+    background: url('images/Blowing-Agents-for-XPE.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.im2{
+    background: url('images/dpo.jpg') no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+
+.im3{
+    background: url('images/eva.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im4{
+    background: url('images/silica.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im5{
+    background: url('images/rubber.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im12{
+    background: url('images/pigment.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.im7{
+    background: url('images/exc.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im8{
+    background: url('images/antiox.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im9{
+    background: url('images/poe.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im10{
+    background: url('images/STERIC.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im11{
+    background: url('images/cblack.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im13{
+    background: url('images/sulphur.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.im6{
+    background: url('images/pvcstab.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im14{
+    background: url('images/PARAF.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im14{
+    background: url('images/PARAF.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im15{
+    background: url('images/BENZO.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im16{
+    background: url('images/titanium.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.im17{
+    background: url('images/silicone.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+@media screen and (max-width: 960px){
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .im{
+    height: 300px;
+    }
+    
+    #prdhero{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+@media screen and (max-width: 450px){
+
+    .cntnt{
+        padding: 2rem;
+    }
+
+    .im{
+        height: 300px;
+        grid-row: 1 / 2;
+        }
+
+    .grades{
+            grid-template-columns: 1fr;
+            grid-gap: 2rem;
+        }
+
+    .im7{
+        background-position: top;
+    }
+
+    .heroimg h1{
+        font-size: 1.5rem;
+        width:100%;
+        padding: 2rem;
+    }
+
+    .herocnt{
+        padding: 2rem;
+        margin: 0;
+        border-left: solid 5px #29C702;
+
+    }
+
+
+}
