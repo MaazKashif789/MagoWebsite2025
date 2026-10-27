@@ -3,7 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Search, Filter, FlaskConical, FileText, ArrowRight, CheckCircle2, ShieldCheck, Download } from 'lucide-react';
 import truckbg from '../assets/truckbg.jpg';
 import containersImage from '../assets/containers.jpg';
-import chemicalImage from '../assets/misc.jpg';
+import drumsImage from '../assets/drums.jpg';
+import solventsImage from '../assets/solvents.jpg';
+import polymersImage from '../assets/polymers.jpg';
+import pigmentsImage from '../assets/pigments.jpg';
 
 interface Product {
   id: string;
@@ -48,7 +51,7 @@ const ProductsPage: React.FC = () => {
       grades: ['99.5% Tech Grade', 'High-Purity Emulsion Grade'],
       category: 'Acrylates',
       origin: 'Taiwan & China Tier-1 Plants',
-      image: chemicalImage
+      image: drumsImage
     },
     {
       id: '2',
@@ -70,7 +73,7 @@ const ProductsPage: React.FC = () => {
       grades: ['Fiber Grade 99.9%', 'Industrial Grade'],
       category: 'Glycols',
       origin: 'Saudi Arabia & South Korea',
-      image: containersImage
+      image: solventsImage
     },
     {
       id: '4',
@@ -81,7 +84,7 @@ const ProductsPage: React.FC = () => {
       grades: ['Electronic Grade', 'USP Pharmaceutical Grade', 'Technical'],
       category: 'Alcohols',
       origin: 'South Korea & Japan',
-      image: chemicalImage
+      image: solventsImage
     },
     {
       id: '5',
@@ -92,7 +95,7 @@ const ProductsPage: React.FC = () => {
       grades: ['Rutile Chloride Grade', 'Rutile Sulfate Grade', 'Anatase'],
       category: 'Pigments',
       origin: 'Direct Global Manufacturers',
-      image: chemicalImage
+      image: pigmentsImage
     },
     {
       id: '6',
@@ -103,7 +106,7 @@ const ProductsPage: React.FC = () => {
       grades: ['70% Active Paste', 'Cosmetic Grade'],
       category: 'Surfactants',
       origin: 'Indonesia & Malaysia Refineries',
-      image: chemicalImage
+      image: solventsImage
     },
     {
       id: '7',
@@ -114,7 +117,7 @@ const ProductsPage: React.FC = () => {
       grades: ['99.5% Pure Industrial Grade'],
       category: 'Solvents',
       origin: 'Taiwan & South Korea',
-      image: containersImage
+      image: drumsImage
     },
     {
       id: '8',
@@ -125,7 +128,7 @@ const ProductsPage: React.FC = () => {
       grades: ['Suspension Grade K-67', 'K-57 Low Molecular'],
       category: 'Polymers',
       origin: 'Taiwan & Japan Producers',
-      image: containersImage
+      image: polymersImage
     },
     {
       id: '9',
@@ -136,7 +139,7 @@ const ProductsPage: React.FC = () => {
       grades: ['99.0% Min Purity Tech Grade'],
       category: 'Acrylates',
       origin: 'China & Taiwan Sourcing',
-      image: chemicalImage
+      image: drumsImage
     },
     {
       id: '10',
