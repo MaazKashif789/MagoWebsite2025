@@ -1,39 +1,49 @@
 // src/components/layout/Navbar.tsx
-import { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import '../../index.css';
-import logo from '../../assets/Logo/mago.png';
+import logo from '../../assets/Logo/mago_white.png';
+import { Menu, X, ArrowUpRight, Shield } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#hero' },
     { name: 'About Us', href: '#about' },
+    { name: 'Global Network', href: '#network' },
     { name: 'Products', href: '/products' },
-    { name: 'Contact Us', href: '#contact'}
+    { name: 'Contact Us', href: '#contact' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
-    // If not on home page and clicking a section, navigate to home and scroll after navigation
-    if ((href === '#hero' || href === '#about' || href === '#contact') && location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: href } });
-      return;
-    }
-    if (href === '/products' && location.pathname === '/'){
+    if (href === '/products') {
       navigate('/products');
+      setIsOpen(false);
       return;
     }
 
-    // For other cases, handle smooth scrolling
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: href } });
+      setIsOpen(false);
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
-      const navbarHeight = 64; // Height of the navbar (h-16 = 64px)
+      const navbarHeight = 76;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
@@ -46,70 +56,92 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-[var(--color-background-light)] z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 w-full">
-          {/* Logo always left */}
-          <div className="flex-1 flex items-center min-w-0">
-            <a 
-              href={location.pathname === '/' ? '#hero' : '/'} 
-              onClick={(e) => handleNavClick(e, '#hero')} 
-              className="flex items-center min-w-0"
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-slate-950/85 backdrop-blur-xl border-b border-white/10 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
+          : 'bg-slate-950/60 backdrop-blur-md border-b border-white/5 py-4'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-12">
+          {/* Brand Logo */}
+          <div className="flex items-center">
+            <a
+              href={location.pathname === '/' ? '#hero' : '/'}
+              onClick={(e) => handleNavClick(e, '#hero')}
+              className="flex items-center group transition-transform duration-200 hover:scale-102"
             >
-              <img src={logo} alt="Mago Enterprises Logo" className="h-10 sm:h-12 w-auto max-w-[140px]" />
+              <img
+                src={logo}
+                alt="Mago Enterprises Logo"
+                className="h-10 sm:h-12 w-auto object-contain drop-shadow-md brightness-105"
+              />
             </a>
           </div>
-          {/* Desktop Navigation always right */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center space-x-7 lg:space-x-9">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="nav-underline-animate text-[var(--color-text-dark)] text-base lg:text-lg relative px-1"
+                className="nav-underline-animate text-slate-300 hover:text-white text-sm font-medium transition-colors tracking-wide"
               >
                 {item.name}
               </a>
             ))}
           </div>
-          {/* Mobile Navigation Button always right */}
+
+          {/* Right Action: Request Quote Button */}
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-slate-950 font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(41,199,2,0.4)] transform hover:-translate-y-0.5"
+            >
+              <span>Get a Quote</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* Mobile Hamburger Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[var(--color-primary)]"
+              className="p-2 rounded-lg text-slate-300 hover:text-white bg-slate-900/60 border border-slate-800 focus:outline-none"
+              aria-label="Toggle navigation menu"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {isOpen ? <X className="w-5 h-5 text-[var(--color-primary)]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
-      {/* Mobile Navigation Menu */}
+
+      {/* Mobile Navigation Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-[var(--color-background-light)] shadow-lg px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden glass-panel border-t border-white/10 px-4 pt-3 pb-5 space-y-2 animate-fadeIn">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="block px-3 py-2 text-[var(--color-text-dark)] hover:text-[var(--color-primary)] transition-colors"
+              className="block px-3 py-2.5 rounded-lg text-slate-200 hover:text-white hover:bg-white/5 text-sm font-medium transition-colors"
             >
               {item.name}
             </a>
           ))}
+          <div className="pt-2">
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--color-primary)] text-slate-950 font-bold text-sm tracking-wide uppercase shadow-[0_0_15px_rgba(41,199,2,0.3)]"
+            >
+              <span>Request Quote</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       )}
     </nav>

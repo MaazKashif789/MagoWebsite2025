@@ -1,200 +1,347 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, FlaskConical, FileText, ArrowRight, CheckCircle2, ShieldCheck, Download } from 'lucide-react';
 import truckbg from '../assets/truckbg.jpg';
 import containersImage from '../assets/containers.jpg';
 import chemicalImage from '../assets/misc.jpg';
-import { useEffect } from 'react';
+
 interface Product {
   id: string;
   name: string;
   hsCode: string;
+  casNumber?: string;
   description: string;
   grades: string[];
   category: string;
+  origin: string;
   image: string;
 }
 
-const ProductsPage = () => {
+const ProductsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
-  // Sample data - Replace with your actual data
+
   const categories = [
-    'Acids',
+    'All Categories',
     'Acrylates',
-    'Alcohols',
-    'Amines',
-    'Glycols',
-    'Oils',
-    'Pigments',
-    'Polymers',
+    'Acids',
     'Solvents',
-    'Surfactants'
+    'Glycols',
+    'Alcohols',
+    'Polymers',
+    'Surfactants',
+    'Pigments',
+    'Logistics'
   ];
 
   const products: Product[] = [
     {
       id: '1',
-      name: 'Acetic Acid',
-      hsCode: '2915.21.00',
-      description: 'Clear, colorless liquid with a pungent odor. Used in the production of vinyl acetate monomer, acetic anhydride, and acetate esters.',
-      grades: ['Technical Grade', 'Food Grade', 'Pharmaceutical Grade'],
-      category: 'Acids',
+      name: 'Butyl Acrylate Monomer (BAM)',
+      hsCode: '2916.12.00',
+      casNumber: '141-32-2',
+      description: 'Clear liquid monomer widely used in acrylic emulsions, paints, architectural coatings, textile adhesives, and synthetic resins.',
+      grades: ['99.5% Tech Grade', 'High-Purity Emulsion Grade'],
+      category: 'Acrylates',
+      origin: 'Taiwan & China Tier-1 Plants',
       image: chemicalImage
     },
     {
       id: '2',
-      name: 'Industrial Solvents',
-      hsCode: '2905.11.00',
-      description: 'High-quality industrial solvents for various manufacturing processes. Available in different concentrations and grades.',
-      grades: ['Industrial Grade', 'Technical Grade'],
-      category: 'Solvents',
+      name: 'Acetic Acid Glacial (GAA)',
+      hsCode: '2915.21.00',
+      casNumber: '64-19-7',
+      description: 'Pungent, high-purity clear liquid used in vinyl acetate monomer (VAM), PTA synthesis, textile dyeing, and chemical intermediates.',
+      grades: ['99.85% Glacial', 'Technical Grade', 'Food Grade'],
+      category: 'Acids',
+      origin: 'Pacific Rim Direct Ports',
       image: containersImage
     },
     {
       id: '3',
-      name: 'Chemical Transport',
-      hsCode: 'N/A',
-      description: 'Specialized chemical transportation services with certified containers and trained personnel.',
-      grades: ['Standard', 'Hazardous'],
-      category: 'Services',
+      name: 'Monoethylene Glycol (MEG)',
+      hsCode: '2905.31.00',
+      casNumber: '107-21-1',
+      description: 'Colorless, odorless viscous liquid critical for polyester fiber/resin production (PET), industrial coolants, and antifreeze formulations.',
+      grades: ['Fiber Grade 99.9%', 'Industrial Grade'],
+      category: 'Glycols',
+      origin: 'Saudi Arabia & South Korea',
+      image: containersImage
+    },
+    {
+      id: '4',
+      name: 'Isopropyl Alcohol (IPA 99.9%)',
+      hsCode: '2905.12.00',
+      casNumber: '67-63-0',
+      description: 'High-evaporation industrial solvent and disinfectant for pharmaceuticals, electronic cleaning, surface coatings, and printing inks.',
+      grades: ['Electronic Grade', 'USP Pharmaceutical Grade', 'Technical'],
+      category: 'Alcohols',
+      origin: 'South Korea & Japan',
+      image: chemicalImage
+    },
+    {
+      id: '5',
+      name: 'Titanium Dioxide (TiO₂ Rutile / Anatase)',
+      hsCode: '3206.11.00',
+      casNumber: '13463-67-7',
+      description: 'Premier white pigment powder providing outstanding opacity, brightness, and weather resistance for coatings, masterbatch plastics, and inks.',
+      grades: ['Rutile Chloride Grade', 'Rutile Sulfate Grade', 'Anatase'],
+      category: 'Pigments',
+      origin: 'Direct Global Manufacturers',
+      image: chemicalImage
+    },
+    {
+      id: '6',
+      name: 'Sodium Lauryl Ether Sulfate (SLES 70%)',
+      hsCode: '3402.11.00',
+      casNumber: '68585-34-2',
+      description: 'High-foaming anionic surfactant indispensable for liquid detergents, dishwashing liquids, shampoos, and personal care cosmetics.',
+      grades: ['70% Active Paste', 'Cosmetic Grade'],
+      category: 'Surfactants',
+      origin: 'Indonesia & Malaysia Refineries',
+      image: chemicalImage
+    },
+    {
+      id: '7',
+      name: 'Methyl Ethyl Ketone (MEK)',
+      hsCode: '2914.12.00',
+      casNumber: '78-93-3',
+      description: 'Rapidly evaporating organic solvent with exceptional solvency for nitrocellulose, acrylic coatings, vinyl resins, and industrial adhesives.',
+      grades: ['99.5% Pure Industrial Grade'],
+      category: 'Solvents',
+      origin: 'Taiwan & South Korea',
+      image: containersImage
+    },
+    {
+      id: '8',
+      name: 'PVC Suspension Resin (K-67 / K-57)',
+      hsCode: '3904.10.00',
+      casNumber: '9002-86-2',
+      description: 'White thermoplastic polymer powder tailored for rigid PVC pipe extrusion, window profiles, artificial leather, and cable compounding.',
+      grades: ['Suspension Grade K-67', 'K-57 Low Molecular'],
+      category: 'Polymers',
+      origin: 'Taiwan & Japan Producers',
+      image: containersImage
+    },
+    {
+      id: '9',
+      name: '2-Ethyl Hexyl Acrylate (2-EHA)',
+      hsCode: '2916.12.00',
+      casNumber: '103-11-7',
+      description: 'Low-temperature flexibility monomer used in pressure-sensitive adhesives, automotive coatings, textile finishes, and plastics modification.',
+      grades: ['99.0% Min Purity Tech Grade'],
+      category: 'Acrylates',
+      origin: 'China & Taiwan Sourcing',
+      image: chemicalImage
+    },
+    {
+      id: '10',
+      name: 'Bulk ISO Tank & Container Chemical Logistics',
+      hsCode: 'LOGISTICS-01',
+      description: 'Turnkey chemical freight logistics including custom ISO tank containers, heated transport, hazardous material handling, and port customs clearance.',
+      grades: ['ISO Tank Cleaned', 'FCL Drummed', 'Flexitank'],
+      category: 'Logistics',
+      origin: 'Worldwide Door-to-Door Logistics',
       image: truckbg
     }
   ];
 
   const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         product.hsCode.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = !selectedCategory || product.category === selectedCategory;
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.hsCode.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (product.casNumber && product.casNumber.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+    const matchesCategory =
+      !selectedCategory || selectedCategory === 'All Categories' || product.category === selectedCategory;
+
     return matchesSearch && matchesCategory;
   });
 
   return (
-    <div className="min-h-screen bg-[var(--color-background-light)]">
-      {/* <Navbar /> */}
-      <main className="pt-20 pb-10">
-        {/* Hero Section with Gradient Background */}
-        <div className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-white py-16 mb-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Our Products
-              </h1>
-              <p className="text-lg md:text-xl opacity-90">
-                Explore our comprehensive range of chemical products. Find exactly what you need with our advanced search and filtering options.
-              </p>
+    <div className="min-h-screen bg-slate-950 text-slate-100 pt-20 pb-20">
+      {/* Header Banner */}
+      <div className="relative py-16 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#29c702_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-xs font-semibold text-[var(--color-primary-light)] mb-4 uppercase tracking-wider">
+            <FlaskConical className="w-3.5 h-3.5" />
+            Mago Enterprises Chemical Catalog
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white tracking-tight mb-4">
+            Industrial & Specialty <span className="text-gradient-emerald">Chemical Portfolio</span>
+          </h1>
+          <p className="text-slate-400 text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+            Search our comprehensive database of industrial raw materials. Complete with HS codes, purity grades, and direct origin sourcing.
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        {/* Search & Category Filter Toolbar */}
+        <div className="glass-panel p-4 sm:p-6 rounded-2xl border border-white/10 mb-8 shadow-xl">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            {/* Search Input */}
+            <div className="relative flex-1 w-full">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Input
+                type="text"
+                placeholder="Search by chemical name, CAS number, HS code, or application..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="glass-input pl-10 h-11 w-full rounded-xl text-sm"
+              />
             </div>
+
+            {/* Category Dropdown for Mobile / Direct Select */}
+            <div className="flex items-center gap-2 w-full md:w-auto">
+              <Filter className="w-4 h-4 text-[var(--color-primary)] shrink-0 hidden sm:block" />
+              <select
+                value={selectedCategory || 'All Categories'}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="glass-input h-11 px-3 rounded-xl text-sm w-full md:w-48 appearance-none cursor-pointer bg-slate-900 border border-slate-700 text-white"
+              >
+                {categories.map((cat) => (
+                  <option key={cat} value={cat} className="bg-slate-900 text-white">
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Quick Pill Filter Buttons */}
+          <div className="flex items-center gap-2 overflow-x-auto pt-4 mt-2 border-t border-slate-800/60 no-scrollbar">
+            {categories.map((cat) => {
+              const isSelected = (!selectedCategory && cat === 'All Categories') || selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat === 'All Categories' ? null : cat)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                    isSelected
+                      ? 'bg-[var(--color-primary)] text-slate-950 shadow-[0_0_15px_rgba(41,199,2,0.3)]'
+                      : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800'
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        <div className="container mx-auto px-4">
-          {/* Search and Filter Section */}
-          <div className="mb-12 bg-white rounded-lg shadow-md max-w-2xl mx-auto px-6 py-6">
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-              <div className="relative w-full max-w-sm">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <Input
-                  type="text"
-                  placeholder="Search products by name, HS code, or description..."
-                  className="pl-10 w-full"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              <div className="relative w-full md:w-40">
-                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <select
-                  className="w-full pl-10 p-2 border rounded-md bg-white appearance-none"
-                  value={selectedCategory || ''}
-                  onChange={(e) => setSelectedCategory(e.target.value || null)}
-                >
-                  <option value="">All Categories</option>
-                  {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
+        {/* Results Counter */}
+        <div className="flex items-center justify-between mb-6 text-xs text-slate-400">
+          <span>
+            Showing <strong className="text-white font-semibold">{filteredProducts.length}</strong> verified chemical products
+          </span>
+          <span className="flex items-center gap-1.5 text-[var(--color-primary-light)]">
+            <ShieldCheck className="w-4 h-4 text-[var(--color-primary)]" />
+            CoA & MSDS available for all listed batches
+          </span>
+        </div>
 
-          {/* Results Count */}
-          <div className="mb-8">
-            <p className="text-[var(--color-text-dark)]">
-              Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
-              {selectedCategory && ` in ${selectedCategory}`}
-            </p>
-          </div>
-
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map(product => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden">
-                <div className="relative h-48 w-full">
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProducts.map((product) => (
+            <div
+              key={product.id}
+              className="glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div>
+                {/* Image & Category Overlay */}
+                <div className="relative h-44 w-full overflow-hidden bg-slate-900">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <span className="absolute top-4 right-4 text-sm text-white bg-[var(--color-primary)]/80 px-3 py-1 rounded-full">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-950/80 backdrop-blur-md text-slate-200 border border-white/10">
                     {product.category}
                   </span>
+                  {product.casNumber && (
+                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono bg-[var(--color-primary)]/20 backdrop-blur-md text-[var(--color-primary-light)] border border-[var(--color-primary)]/30">
+                      CAS: {product.casNumber}
+                    </span>
+                  )}
                 </div>
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl text-[var(--color-primary)] group-hover:text-[var(--color-secondary)] transition-colors">
-                      {product.name}
-                    </CardTitle>
+
+                {/* Content */}
+                <div className="p-5">
+                  <div className="text-[11px] font-mono text-slate-400 mb-1">
+                    HS Code: <span className="text-slate-200 font-semibold">{product.hsCode}</span>
                   </div>
-                  <p className="text-sm text-[var(--color-text-gray)]">
-                    HS Code: {product.hsCode}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-[var(--color-text-dark)] mb-4 line-clamp-3">
+
+                  <h3 className="text-lg font-bold text-white font-display group-hover:text-[var(--color-primary-light)] transition-colors mb-2">
+                    {product.name}
+                  </h3>
+
+                  <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">
                     {product.description}
                   </p>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-sm text-[var(--color-text-gray)]">Available Grades:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {product.grades.map(grade => (
-                        <span
-                          key={grade}
-                          className="px-3 py-1 bg-[var(--color-primary)]/10 text-[var(--color-primary)] rounded-full text-sm"
-                        >
-                          {grade}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
 
-          {/* No Results Message */}
-          {filteredProducts.length === 0 && (
-            <div className="text-center py-16 bg-white rounded-lg shadow-md">
-              <p className="text-[var(--color-text-dark)] text-lg mb-4">
-                No products found matching your search criteria.
-              </p>
-              <p className="text-[var(--color-text-gray)]">
-                Try adjusting your search or filter to find what you're looking for.
-              </p>
+                  {/* Grades Pills */}
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {product.grades.map((grade, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[10px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300"
+                      >
+                        {grade}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Origin */}
+                  <div className="text-[11px] text-slate-400 flex items-center gap-1.5 pt-2 border-t border-slate-800/80">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0" />
+                    <span>Origin: <strong className="text-slate-300 font-normal">{product.origin}</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div className="p-5 pt-0">
+                <a
+                  href="/#contact"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900 hover:bg-[var(--color-primary)] text-slate-200 hover:text-slate-950 font-bold text-xs tracking-wider uppercase transition-all duration-200 border border-slate-800 hover:border-[var(--color-primary)] shadow-sm"
+                >
+                  <span>Request Quote & CoA</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
-          )}
+          ))}
         </div>
-      </main>
-      {/* <Footer /> */}
+
+        {/* Empty Search Fallback */}
+        {filteredProducts.length === 0 && (
+          <div className="glass-panel p-12 text-center rounded-2xl border border-white/10 mt-6">
+            <FlaskConical className="w-12 h-12 text-slate-500 mx-auto mb-3" />
+            <h3 className="text-lg font-bold text-white mb-1">No chemicals matched your query</h3>
+            <p className="text-xs text-slate-400 max-w-md mx-auto mb-6">
+              Our catalog is continually expanding. Contact our technical sourcing desk directly to request pricing for any chemical or CAS number.
+            </p>
+            <a
+              href="/#contact"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[var(--color-primary)] text-slate-950 font-bold text-xs tracking-wider uppercase"
+            >
+              <span>Submit Custom Chemical RFP</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default ProductsPage; 
+export default ProductsPage;
