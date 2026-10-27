@@ -2,7 +2,6 @@
   "name": "mago-website",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://MaazKashif789.github.io/MagoWebsite2025",
   "type": "module",
   "scripts": {
     "dev": "vite",
