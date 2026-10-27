@@ -6,7 +6,7 @@ import hero2 from '../../assets/Hero/Hero Image 2.jpg';
 import hero3 from '../../assets/Hero/Hero Image 1.jpg';
 import { Button } from "@/components/ui/button";
 import { MolecularHeroCanvas } from '../3d/MolecularHeroCanvas';
-import { ArrowRight, ShieldCheck, Globe, Award, Sparkles, Building2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();
@@ -15,121 +15,70 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 6000);
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <section id="hero" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-slate-950 pt-20 pb-16">
-      {/* Background Carousel with Smooth Ken-Burns Effect */}
+    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#090D14] pt-24 pb-16">
+      {/* Background Logistics Image with Clean Vignette */}
       <div className="absolute inset-0 z-0">
         {images.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImageIndex ? 'opacity-35 scale-105' : 'opacity-0 scale-100'
-            } transition-all duration-1000 ease-out`}
+              index === currentImageIndex ? 'opacity-25' : 'opacity-0'
+            }`}
           >
             <img
               src={image}
-              alt={`Industrial Chemical Logistics ${index + 1}`}
+              alt="Industrial Chemical Shipping"
               className="w-full h-full object-cover"
             />
           </div>
         ))}
-        {/* Dark Vignette Overlay for Crisp Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-slate-950/60 to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#090D14]/80 via-[#090D14]/90 to-[#090D14]" />
       </div>
 
-      {/* 3D Interactive Chemical Molecular Canvas */}
+      {/* Subtle Ambient Molecular Canvas */}
       <MolecularHeroCanvas />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Top Floating Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-slate-200 text-xs md:text-sm font-medium mb-6 shadow-[0_0_25px_rgba(41,199,2,0.15)] backdrop-blur-md animate-float">
-          <span className="flex h-2 w-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
-          <span className="text-[var(--color-primary-light)] font-semibold">Mago Enterprises</span>
-          <span className="text-slate-500">•</span>
-          <span>Global Chemical Sourcing & Supply Chain Leaders</span>
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+        {/* Minimalist Origin Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
+          <span>Established 1992 • Global Chemical Distribution</span>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight text-white max-w-5xl leading-[1.1] mb-6">
-          Empowering Industries Through{' '}
-          <span className="text-gradient-emerald">Precision Chemical Sourcing</span>
+        {/* Clean, High-Impact Headline */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">
+          Global Chemical Sourcing &{' '}
+          <span className="text-[var(--color-primary)]">Industrial Supply</span>
         </h1>
 
-        {/* Sub-headline */}
-        <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-          A trusted family enterprise importing high-grade chemicals and industrial raw materials from{' '}
-          <strong className="text-white font-semibold">20+ countries</strong> with a network of{' '}
-          <strong className="text-white font-semibold">200+ global manufacturers</strong> serving over{' '}
-          <strong className="text-white font-semibold">500+ industrial clients</strong> worldwide since 1992.
+        {/* Crisp Subtitle */}
+        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+          A family-owned enterprise importing essential raw materials from 20+ countries, connecting 200+ global chemical manufacturers with over 500 industrial clients worldwide.
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-16">
+        {/* Minimalist Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
           <Button
             onClick={() => navigate('/products')}
-            className="w-full sm:w-auto px-8 py-6 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-slate-950 font-bold text-base shadow-[0_0_30px_rgba(41,199,2,0.35)] transition-all duration-300 hover:scale-105 group"
+            className="w-full sm:w-auto px-7 py-2.5 rounded-md bg-[var(--color-primary)] hover:bg-[#22a802] text-slate-950 font-semibold text-sm transition-colors cursor-pointer"
           >
             <span>Explore Chemical Catalog</span>
-            <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 ml-1.5" />
           </Button>
 
           <a
             href="#contact"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full glass-card hover:border-[var(--color-primary)]/50 text-white font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-7 py-2.5 rounded-md bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.1] text-white font-medium text-sm transition-colors text-center"
           >
-            <ShieldCheck className="w-5 h-5 text-[var(--color-primary)]" />
-            <span>Request Inquiries & Quotes</span>
+            Request Quotation
           </a>
-        </div>
-
-        {/* Floating 3D Stat Highlights Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl pt-4">
-          <div className="glass-card p-4 rounded-xl text-left border border-white/10 hover:border-[var(--color-primary)]/40 transition-all">
-            <div className="text-2xl sm:text-3xl font-extrabold text-[var(--color-primary)] font-display">20+</div>
-            <div className="text-xs sm:text-sm font-semibold text-white mt-0.5">Sourcing Nations</div>
-            <div className="text-[11px] text-slate-400 mt-1">Pacific Rim, Europe & Americas</div>
-          </div>
-
-          <div className="glass-card p-4 rounded-xl text-left border border-white/10 hover:border-sky-400/40 transition-all">
-            <div className="text-2xl sm:text-3xl font-extrabold text-sky-400 font-display">200+</div>
-            <div className="text-xs sm:text-sm font-semibold text-white mt-0.5">Global Suppliers</div>
-            <div className="text-[11px] text-slate-400 mt-1">Certified chemical producers</div>
-          </div>
-
-          <div className="glass-card p-4 rounded-xl text-left border border-white/10 hover:border-emerald-400/40 transition-all">
-            <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-display">500+</div>
-            <div className="text-xs sm:text-sm font-semibold text-white mt-0.5">Industrial Clients</div>
-            <div className="text-[11px] text-slate-400 mt-1">Textiles, coatings, plastics, pharma</div>
-          </div>
-
-          <div className="glass-card p-4 rounded-xl text-left border border-white/10 hover:border-amber-400/40 transition-all">
-            <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 font-display">1992</div>
-            <div className="text-xs sm:text-sm font-semibold text-white mt-0.5">Founded</div>
-            <div className="text-[11px] text-slate-400 mt-1">30+ Years of family-owned trust</div>
-          </div>
-        </div>
-
-        {/* Carousel Slide Indicators */}
-        <div className="flex items-center space-x-2 mt-8">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === currentImageIndex
-                  ? 'w-8 bg-[var(--color-primary)]'
-                  : 'w-2 bg-slate-700 hover:bg-slate-500'
-              }`}
-              aria-label={`Jump to slide ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>

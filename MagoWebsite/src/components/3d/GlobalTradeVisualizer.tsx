@@ -1,102 +1,95 @@
+// src/components/3d/GlobalTradeVisualizer.tsx
 import React, { useState } from 'react';
-import { Globe, ArrowUpRight, ShieldCheck, Factory, Ship, Sparkles } from 'lucide-react';
+import { Globe, Ship, Check } from 'lucide-react';
 
 interface TradeHub {
   name: string;
   region: string;
-  role: 'Primary Source' | 'Strategic Partner' | 'Global Distribution';
   focus: string;
-  coords: { x: number; y: number }; // percentage position
+  coords: { x: number; y: number };
 }
 
 const tradeHubs: TradeHub[] = [
-  { name: 'China & Taiwan', region: 'East Asia', role: 'Primary Source', focus: 'Industrial raw materials & synthetic organics', coords: { x: 74, y: 44 } },
-  { name: 'South Korea & Japan', region: 'East Asia', role: 'Primary Source', focus: 'High-purity specialty chemicals & polymers', coords: { x: 82, y: 38 } },
-  { name: 'Indonesia & Malaysia', region: 'Southeast Asia', role: 'Strategic Partner', focus: 'Oleochemicals & natural derivatives', coords: { x: 77, y: 62 } },
-  { name: 'Germany & Western Europe', region: 'Europe', role: 'Strategic Partner', focus: 'Precision analytical & laboratory grade reagents', coords: { x: 48, y: 30 } },
-  { name: 'Middle East (UAE & Saudi)', region: 'Middle East', role: 'Strategic Partner', focus: 'Petrochemical building blocks & solvents', coords: { x: 58, y: 46 } },
-  { name: 'United States', region: 'North America', role: 'Strategic Partner', focus: 'Specialty catalysts & coatings raw materials', coords: { x: 22, y: 36 } },
-  { name: 'Pakistan (Karachi & Lahore)', region: 'South Asia HQ', role: 'Global Distribution', focus: 'Central import terminal & nationwide logistics hub', coords: { x: 64, y: 45 } }
+  { name: 'China & Taiwan', region: 'East Asia', focus: 'Industrial monomers, acrylates, and synthetic organics', coords: { x: 74, y: 44 } },
+  { name: 'South Korea & Japan', region: 'East Asia', focus: 'High-purity specialty chemicals, glycols, and polymers', coords: { x: 82, y: 38 } },
+  { name: 'Indonesia & Malaysia', region: 'Southeast Asia', focus: 'Natural oleochemicals, surfactants, and glycerine', coords: { x: 77, y: 62 } },
+  { name: 'Western Europe', region: 'Europe', focus: 'Precision analytical chemicals and specialty additives', coords: { x: 48, y: 30 } },
+  { name: 'Middle East', region: 'Middle East', focus: 'Base petrochemicals, solvents, and bulk polymers', coords: { x: 58, y: 46 } },
+  { name: 'United States', region: 'North America', focus: 'Specialty catalysts, resins, and advanced coatings', coords: { x: 22, y: 36 } },
+  { name: 'Pakistan (Lahore & Karachi)', region: 'Distribution HQ', focus: 'Central import terminals and nationwide distribution', coords: { x: 64, y: 45 } }
 ];
 
 export const GlobalTradeVisualizer: React.FC = () => {
   const [activeHub, setActiveHub] = useState<TradeHub>(tradeHubs[0]);
 
   return (
-    <div className="relative rounded-2xl glass-card overflow-hidden p-6 md:p-10 border border-white/10">
-      {/* Background ambient lighting */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Header Info */}
-      <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+    <div className="rounded-xl minimal-card p-6 sm:p-8">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 pb-6 border-b border-white/[0.06]">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-xs font-semibold text-[var(--color-primary-light)] mb-3 uppercase tracking-wider">
-            <Globe className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '14s' }} />
-            Worldwide Sourcing & Distribution
-          </div>
-          <h3 className="text-2xl md:text-3xl font-bold font-display text-white">
-            Connecting <span className="text-gradient-emerald">20+ Countries</span> & 200+ Suppliers
+          <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)]">
+            Global Trade Network
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">
+            Sourcing Across 20+ Countries & 200+ Suppliers
           </h3>
-          <p className="text-slate-400 text-sm mt-1 max-w-xl">
-            Established in 1992, Mago Enterprises bridges leading global chemical producers with over 500 industrial manufacturers worldwide.
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl font-light">
+            Connecting direct chemical manufacturers with over 500 industrial plants through certified maritime shipping corridors.
           </p>
         </div>
 
-        {/* Global Live Counters */}
-        <div className="flex items-center gap-4 bg-slate-900/60 p-3 rounded-xl border border-white/5">
-          <div className="text-center px-3 border-r border-slate-700/60">
-            <div className="text-xl font-bold text-[var(--color-primary)]">20+</div>
-            <div className="text-[11px] text-slate-400 uppercase tracking-wide">Countries</div>
+        {/* Minimalist Metrics */}
+        <div className="flex items-center gap-6 text-left">
+          <div>
+            <div className="text-xl font-bold text-white">20+</div>
+            <div className="text-[11px] text-slate-400">Origins</div>
           </div>
-          <div className="text-center px-3 border-r border-slate-700/60">
-            <div className="text-xl font-bold text-sky-400">200+</div>
-            <div className="text-[11px] text-slate-400 uppercase tracking-wide">Suppliers</div>
+          <div className="w-px h-8 bg-white/[0.08]" />
+          <div>
+            <div className="text-xl font-bold text-white">200+</div>
+            <div className="text-[11px] text-slate-400">Suppliers</div>
           </div>
-          <div className="text-center px-3">
-            <div className="text-xl font-bold text-emerald-400">500+</div>
-            <div className="text-[11px] text-slate-400 uppercase tracking-wide">Customers</div>
+          <div className="w-px h-8 bg-white/[0.08]" />
+          <div>
+            <div className="text-xl font-bold text-white">500+</div>
+            <div className="text-[11px] text-slate-400">Clients</div>
           </div>
         </div>
       </div>
 
-      {/* Interactive Map Visualizer Canvas Area */}
-      <div className="relative w-full h-80 md:h-96 rounded-xl bg-slate-950/80 border border-slate-800/80 overflow-hidden flex items-center justify-center">
-        {/* World Map Grid Outline SVG */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+      {/* Map Graphic Area */}
+      <div className="relative w-full h-72 sm:h-80 rounded-lg bg-[#070A0F] border border-white/[0.06] overflow-hidden flex items-center justify-center">
+        {/* Subtle grid pattern */}
+        <svg className="absolute inset-0 w-full h-full opacity-15 pointer-events-none">
           <defs>
-            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+            <pattern id="world-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+              <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="0.8" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#world-grid)" />
         </svg>
 
-        {/* Connecting SVG Animated Trade Lines */}
+        {/* Trade Arcs */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none">
           {tradeHubs.map((hub, idx) => {
-            if (hub.name === 'Pakistan (Karachi & Lahore)') return null;
+            if (hub.name.includes('Pakistan')) return null;
             const hq = tradeHubs.find(h => h.name.includes('Pakistan'))!.coords;
+            const isSelected = activeHub.name === hub.name;
             return (
-              <g key={idx}>
-                {/* Arc line */}
-                <path
-                  d={`M ${hub.coords.x}% ${hub.coords.y}% Q ${(hub.coords.x + hq.x) / 2}% ${(hub.coords.y + hq.y) / 2 - 14}% ${hq.x}% ${hq.y}%`}
-                  fill="none"
-                  stroke={activeHub.name === hub.name ? '#29C702' : 'rgba(41, 199, 2, 0.22)'}
-                  strokeWidth={activeHub.name === hub.name ? '2' : '1.2'}
-                  strokeDasharray={activeHub.name === hub.name ? 'none' : '4, 4'}
-                  className="transition-all duration-300"
-                />
-              </g>
+              <path
+                key={idx}
+                d={`M ${hub.coords.x}% ${hub.coords.y}% Q ${(hub.coords.x + hq.x) / 2}% ${(hub.coords.y + hq.y) / 2 - 12}% ${hq.x}% ${hq.y}%`}
+                fill="none"
+                stroke={isSelected ? '#29C702' : 'rgba(255, 255, 255, 0.12)'}
+                strokeWidth={isSelected ? '1.5' : '1'}
+                strokeDasharray={isSelected ? 'none' : '3, 3'}
+                className="transition-all duration-300"
+              />
             );
           })}
         </svg>
 
-        {/* Hub Interactive Markers */}
+        {/* Hub Pins */}
         {tradeHubs.map((hub, idx) => {
           const isSelected = activeHub.name === hub.name;
           const isHQ = hub.name.includes('Pakistan');
@@ -105,40 +98,25 @@ export const GlobalTradeVisualizer: React.FC = () => {
               key={idx}
               onClick={() => setActiveHub(hub)}
               style={{ left: `${hub.coords.x}%`, top: `${hub.coords.y}%` }}
-              className={`absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer focus:outline-none transition-transform duration-300 ${
-                isSelected ? 'scale-125 z-20' : 'hover:scale-110 z-10'
-              }`}
+              className="absolute -translate-x-1/2 -translate-y-1/2 group cursor-pointer focus:outline-none"
               aria-label={hub.name}
             >
               <div className="relative flex items-center justify-center">
-                {/* Pulsing ring */}
                 <div
-                  className={`absolute w-8 h-8 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full border transition-all ${
                     isHQ
-                      ? 'bg-emerald-500/30 animate-ping'
+                      ? 'bg-[var(--color-primary)] border-white scale-125'
                       : isSelected
-                      ? 'bg-[var(--color-primary)]/40 animate-ping'
-                      : 'bg-transparent'
-                  }`}
-                />
-                {/* Node pin */}
-                <div
-                  className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${
-                    isHQ
-                      ? 'bg-emerald-400 border-white shadow-[0_0_15px_#29C702]'
-                      : isSelected
-                      ? 'bg-[var(--color-primary)] border-white shadow-[0_0_12px_#29C702]'
-                      : 'bg-slate-700 border-slate-400 group-hover:bg-[var(--color-primary)]'
+                      ? 'bg-[var(--color-primary)] border-white scale-125'
+                      : 'bg-slate-700 border-slate-500 group-hover:bg-slate-300'
                   }`}
                 />
               </div>
-
-              {/* Tag Label */}
               <div
-                className={`absolute top-full mt-1.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded text-[10px] font-medium whitespace-nowrap transition-all ${
+                className={`absolute top-full mt-1 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded text-[10px] whitespace-nowrap transition-colors ${
                   isSelected
-                    ? 'bg-white text-slate-950 font-bold shadow-lg'
-                    : 'bg-slate-900/90 text-slate-300 border border-slate-700/80 group-hover:text-white'
+                    ? 'bg-white text-slate-950 font-bold'
+                    : 'bg-[#0F141E] text-slate-400 border border-white/[0.08]'
                 }`}
               >
                 {hub.name.split(' ')[0]}
@@ -147,33 +125,25 @@ export const GlobalTradeVisualizer: React.FC = () => {
           );
         })}
 
-        {/* Central Watermark Indicator */}
-        <div className="absolute bottom-4 left-4 flex items-center gap-2 text-xs text-slate-400 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-white/5 backdrop-blur-md">
+        {/* Minimalist Watermark */}
+        <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-[11px] text-slate-400">
           <Ship className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-          <span>Active Sea & Air Freight Logistics Corridors</span>
+          <span>Container & ISO Tank Sea Corridors</span>
         </div>
       </div>
 
-      {/* Selected Hub Deep-Dive Card */}
-      <div className="mt-6 p-4 rounded-xl bg-slate-900/50 border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div className="flex items-start gap-3">
-          <div className="p-2.5 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)]">
-            <Factory className="w-5 h-5" />
+      {/* Selected Sourcing Region Detail Bar */}
+      <div className="mt-5 p-4 rounded-lg bg-[#0B0F17] border border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div>
+          <div className="flex items-center gap-2">
+            <h4 className="text-sm font-bold text-white">{activeHub.name}</h4>
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider">({activeHub.region})</span>
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h4 className="text-base font-bold text-white">{activeHub.name}</h4>
-              <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 font-medium">
-                {activeHub.role}
-              </span>
-            </div>
-            <p className="text-xs text-slate-400 mt-0.5">{activeHub.focus}</p>
-          </div>
+          <p className="text-xs text-slate-400 mt-0.5">{activeHub.focus}</p>
         </div>
-
-        <div className="flex items-center gap-2 text-xs text-[var(--color-primary)] font-medium">
-          <ShieldCheck className="w-4 h-4 text-[var(--color-primary)]" />
-          <span>ISO & QC Verified Sourcing</span>
+        <div className="flex items-center gap-1.5 text-xs text-[var(--color-primary)] font-medium">
+          <Check className="w-3.5 h-3.5" />
+          <span>Verified Port Delivery</span>
         </div>
       </div>
     </div>

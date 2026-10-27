@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Globe, Send, CheckCircle2, ShieldCheck, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Check } from "lucide-react";
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -15,162 +15,132 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-slate-950 border-t border-slate-900 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[var(--color-primary)]/10 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="contact" className="py-20 bg-[#090D14]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Direct Inquiries & Chemical Sourcing Desk */}
-          <div className="lg:col-span-5 space-y-8 text-left">
+          {/* Left Column: Direct Inquiries */}
+          <div className="lg:col-span-5 space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-xs font-semibold text-[var(--color-primary-light)] mb-3 uppercase tracking-wider">
-                <Mail className="w-3.5 h-3.5" />
-                Global Inquiries & Commercial Desk
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight leading-tight">
-                Request a Quote or <span className="text-gradient-emerald">Technical Consultation</span>
+              <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)]">
+                Commercial Desk
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mt-1">
+                Request a Chemical Quote
               </h2>
-              <p className="text-slate-400 text-base mt-3 font-light leading-relaxed">
-                Whether you need container loads (FCL), custom tanker delivery, or technical specifications (TDS/MSDS), our commercial desk responds within 24 hours.
+              <p className="text-slate-400 text-sm mt-2 font-light leading-relaxed">
+                Contact our sourcing specialists directly for bulk ISO tank quotes, containerized shipments, and technical data sheets (TDS/MSDS).
               </p>
             </div>
 
-            {/* Direct Contact Detail Cards */}
-            <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 rounded-xl glass-card border border-white/10">
-                <div className="p-3 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-400 font-medium uppercase tracking-wide">Direct Line / WhatsApp</div>
-                  <a href="tel:+923008402932" className="text-base font-bold text-white hover:text-[var(--color-primary)] transition-colors">
-                    +92 300 8402932
-                  </a>
-                  <p className="text-xs text-slate-500 mt-0.5">Mon - Sat: 9:00 AM - 6:00 PM PKT</p>
-                </div>
+            <div className="space-y-3 pt-2">
+              <div className="p-4 rounded-lg minimal-card">
+                <div className="text-[11px] text-slate-400 uppercase tracking-wider mb-1">Direct Phone / WhatsApp</div>
+                <a href="tel:+923008402932" className="text-sm font-semibold text-white hover:text-[var(--color-primary)] transition-colors">
+                  +92 300 8402932
+                </a>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl glass-card border border-white/10">
-                <div className="p-3 rounded-lg bg-sky-500/10 text-sky-400 shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-400 font-medium uppercase tracking-wide">Commercial & Procurement Email</div>
-                  <a href="mailto:magoon33@hotmail.com" className="text-base font-bold text-white hover:text-sky-400 transition-colors">
-                    magoon33@hotmail.com
-                  </a>
-                  <p className="text-xs text-slate-500 mt-0.5">Formal RFP & Quote Inquiries</p>
-                </div>
+              <div className="p-4 rounded-lg minimal-card">
+                <div className="text-[11px] text-slate-400 uppercase tracking-wider mb-1">Email Inquiries</div>
+                <a href="mailto:magoon33@hotmail.com" className="text-sm font-semibold text-white hover:text-[var(--color-primary)] transition-colors">
+                  magoon33@hotmail.com
+                </a>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-xl glass-card border border-white/10">
-                <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-400 font-medium uppercase tracking-wide">Headquarters & Import Terminals</div>
-                  <div className="text-sm font-bold text-white">Pakistan Operations</div>
-                  <p className="text-xs text-slate-400 mt-0.5">Lahore & Karachi Port Distribution Hubs</p>
-                </div>
+              <div className="p-4 rounded-lg minimal-card">
+                <div className="text-[11px] text-slate-400 uppercase tracking-wider mb-1">Logistics & Import Terminals</div>
+                <div className="text-sm font-semibold text-white">Lahore & Karachi Port Logistics Hubs, Pakistan</div>
               </div>
-            </div>
-
-            {/* Quality Commitment Badge */}
-            <div className="flex items-center gap-2 text-xs text-slate-400 pt-2">
-              <ShieldCheck className="w-4 h-4 text-[var(--color-primary)]" />
-              <span>100% Guaranteed On-Spec Purity with Verified CoA Documentation</span>
             </div>
           </div>
 
-          {/* Right Column: High-Tech Quote Form */}
+          {/* Right Column: Clean Form */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-8 sm:p-10 rounded-2xl border border-white/10 shadow-2xl relative">
-              <h3 className="text-2xl font-bold font-display text-white mb-2">
-                Chemical Procurement Inquiries
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-400 mb-6">
-                Fill out the details below. Our technical sales team will promptly provide pricing, lead times, and specifications.
+            <div className="p-6 sm:p-8 rounded-lg minimal-card">
+              <h3 className="text-lg font-bold text-white mb-1">Commercial Sourcing Inquiry</h3>
+              <p className="text-xs text-slate-400 mb-6 font-light">
+                Fill in your chemical requirements below. Our commercial team will provide competitive CIF/FOB pricing.
               </p>
 
               {submitted ? (
-                <div className="p-6 rounded-xl bg-emerald-950/40 border border-emerald-500/50 text-center animate-fadeIn">
-                  <CheckCircle2 className="w-12 h-12 text-[var(--color-primary)] mx-auto mb-3" />
-                  <h4 className="text-lg font-bold text-white mb-1">Inquiry Received Successfully!</h4>
+                <div className="p-6 rounded-lg bg-[#0B150A] border border-[var(--color-primary)]/40 text-center">
+                  <div className="w-10 h-10 rounded-full bg-[var(--color-primary)]/15 text-[var(--color-primary)] flex items-center justify-center mx-auto mb-3">
+                    <Check className="w-5 h-5" />
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-1">Inquiry Submitted</h4>
                   <p className="text-xs text-slate-300">
-                    Thank you for reaching out to Mago Enterprises. A member of our sourcing and sales team will contact you shortly.
+                    Thank you. A member of our commercial desk will contact you with pricing and availability.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Full Name *</label>
+                      <label className="block text-xs font-medium text-slate-300 mb-1">Full Name *</label>
                       <Input
                         type="text"
-                        placeholder="e.g. John Doe"
+                        placeholder="John Doe"
                         required
-                        className="glass-input h-11 px-3.5 rounded-lg text-sm w-full"
+                        className="minimal-input h-10 px-3 rounded-md text-sm w-full"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Company / Manufacturing Plant *</label>
+                      <label className="block text-xs font-medium text-slate-300 mb-1">Company / Plant *</label>
                       <Input
                         type="text"
-                        placeholder="e.g. Apex Industrial Corp"
+                        placeholder="Manufacturing Plant Name"
                         required
-                        className="glass-input h-11 px-3.5 rounded-lg text-sm w-full"
+                        className="minimal-input h-10 px-3 rounded-md text-sm w-full"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Business Email *</label>
+                      <label className="block text-xs font-medium text-slate-300 mb-1">Business Email *</label>
                       <Input
                         type="email"
                         placeholder="john@company.com"
                         required
-                        className="glass-input h-11 px-3.5 rounded-lg text-sm w-full"
+                        className="minimal-input h-10 px-3 rounded-md text-sm w-full"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Contact Phone / WhatsApp *</label>
+                      <label className="block text-xs font-medium text-slate-300 mb-1">Phone / WhatsApp *</label>
                       <Input
                         type="tel"
                         placeholder="+92 300 1234567"
                         required
-                        className="glass-input h-11 px-3.5 rounded-lg text-sm w-full"
+                        className="minimal-input h-10 px-3 rounded-md text-sm w-full"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">Chemical Name, Grade or CAS Number</label>
+                    <label className="block text-xs font-medium text-slate-300 mb-1">Chemical Name, Grade or CAS Number</label>
                     <Input
                       type="text"
-                      placeholder="e.g. Butyl Acrylate / Acetic Acid Glacial / Titanium Dioxide"
-                      className="glass-input h-11 px-3.5 rounded-lg text-sm w-full"
+                      placeholder="e.g. Butyl Acrylate / Acetic Acid Glacial"
+                      className="minimal-input h-10 px-3 rounded-md text-sm w-full"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">Estimated Quantity & Delivery Timeline</label>
+                    <label className="block text-xs font-medium text-slate-300 mb-1">Volume & Requirements</label>
                     <Textarea
-                      placeholder="Provide volume (e.g. 1x20' FCL, drums, ISO tank), target port, and technical requirements..."
+                      placeholder="Specify required volume (e.g. 1x20' FCL, ISO Tank), destination port, and grade..."
                       rows={4}
                       required
-                      className="glass-input px-3.5 py-2.5 rounded-lg text-sm w-full resize-none"
+                      className="minimal-input p-3 rounded-md text-sm w-full resize-none"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full py-6 rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] text-slate-950 font-bold text-base shadow-[0_0_25px_rgba(41,199,2,0.3)] transition-all hover:scale-101 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 rounded-md bg-[var(--color-primary)] hover:bg-[#22a802] text-slate-950 font-semibold text-xs tracking-wider uppercase transition-colors cursor-pointer"
                   >
-                    <span>Submit Chemical Inquiry</span>
-                    <Send className="w-4 h-4" />
+                    Submit Quotation Request
                   </Button>
                 </form>
               )}

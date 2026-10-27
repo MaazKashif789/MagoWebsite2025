@@ -164,28 +164,25 @@ const ProductsPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-20 pb-20">
+    <div className="min-h-screen bg-[#090D14] text-slate-100 pt-20 pb-20">
       {/* Header Banner */}
-      <div className="relative py-16 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#29c702_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-xs font-semibold text-[var(--color-primary-light)] mb-4 uppercase tracking-wider">
-            <FlaskConical className="w-3.5 h-3.5" />
-            Mago Enterprises Chemical Catalog
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white tracking-tight mb-4">
-            Industrial & Specialty <span className="text-gradient-emerald">Chemical Portfolio</span>
+      <div className="py-14 bg-[#0B0F18] border-b border-white/[0.06]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+          <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)]">
+            Product Catalog
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mt-1 mb-3">
+            Industrial & Specialty Chemicals
           </h1>
-          <p className="text-slate-400 text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
-            Search our comprehensive database of industrial raw materials. Complete with HS codes, purity grades, and direct origin sourcing.
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
+            Search our chemical portfolio with HS codes, purity grades, and direct manufacturer origins.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-8">
         {/* Search & Category Filter Toolbar */}
-        <div className="glass-panel p-4 sm:p-6 rounded-2xl border border-white/10 mb-8 shadow-xl">
+        <div className="p-4 sm:p-5 rounded-lg minimal-card mb-8">
           <div className="flex flex-col md:flex-row items-center gap-4">
             {/* Search Input */}
             <div className="relative flex-1 w-full">

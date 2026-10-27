@@ -1,34 +1,30 @@
 // src/components/sections/Team.tsx
 import React from 'react';
 import teamImage from '../../assets/team.jpeg';
-import { Mail, Phone, Users, Shield, Briefcase } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 const teamMembers = [
   {
     name: 'Kashif Maqbool',
     role: 'Chief Executive Officer',
-    badge: 'Executive Leadership',
     email: 'magoon33@hotmail.com',
     phone: '+92 300 8402932',
   },
   {
     name: 'Furqan Kashif',
-    role: 'Director of Global Sales',
-    badge: 'Commercial Strategy',
+    role: 'Sales Manager',
     email: 'furqank95@gmail.com',
     phone: '+92 323 8498256',
   },
   {
     name: 'Mustafa Kashif',
-    role: 'Director of Global Sourcing',
-    badge: 'Supply Chain & Sourcing',
+    role: 'Sourcing Manager',
     email: 'mustafaalsdf@gmail.com',
     phone: '+92 307 4024953',
   },
   {
     name: 'Maaz Kashif',
-    role: 'Director of Finance & Operations',
-    badge: 'Finance & Trade Operations',
+    role: 'Accounts & Operations Manager',
     email: 'mustafakshf12345@gmail.com',
     phone: '+92 336 4336527',
   },
@@ -36,83 +32,63 @@ const teamMembers = [
 
 const Team: React.FC = () => {
   return (
-    <section id="team" className="relative py-24 bg-slate-950/90 border-t border-slate-900 overflow-hidden" aria-label="Our Leadership">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 right-10 w-96 h-96 bg-[var(--color-primary)]/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-xs font-semibold text-[var(--color-primary-light)] mb-3 uppercase tracking-wider">
-            <Users className="w-3.5 h-3.5" />
-            Family Enterprise Heritage
+    <section id="team" className="py-20 bg-[#090D14] border-b border-white/[0.06]" aria-label="Our Leadership">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 pb-6 border-b border-white/[0.06]">
+          <div>
+            <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)]">
+              Executive Leadership
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mt-1">
+              Family-Owned & Operated
+            </h2>
+            <p className="text-slate-400 text-sm mt-1 max-w-xl font-light">
+              Direct access to company principals for long-term contract pricing, supply agreements, and technical execution.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight">
-            Executive Leadership & <span className="text-gradient-emerald">Personal Commitment</span>
-          </h2>
-          <p className="text-slate-400 text-base mt-2 font-light">
-            Behind every container, shipment, and contract is our family’s direct pledge of quality, integrity, and personal accessibility.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left: Team Photo with High-Tech Frame */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden glass-card p-2 border border-white/10 group">
-              <div className="relative h-[460px] rounded-xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left: Clean Team Photo */}
+          <div className="lg:col-span-5">
+            <div className="rounded-lg overflow-hidden border border-white/[0.08] bg-[#0F141E]">
+              <div className="h-[380px] sm:h-[420px] w-full">
                 <img
                   src={teamImage}
                   alt="Mago Enterprises Leadership Team"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-              </div>
-
-              {/* Inset Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass-panel border border-white/10 backdrop-blur-xl">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-[var(--color-primary)]/20 text-[var(--color-primary-light)]">
-                    <Shield className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-white">Direct Executive Accessibility</h4>
-                    <p className="text-xs text-slate-400">Direct contact with principals for seamless contracts</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Team Members Executive Cards */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {/* Right: Clean Leadership Directory Cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="glass-card p-6 rounded-2xl border border-white/10 hover:border-[var(--color-primary)]/40 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between"
+                className="p-5 rounded-lg minimal-card flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-400 border border-slate-800">
-                    {member.badge}
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-3 font-display group-hover:text-[var(--color-primary-light)] transition-colors">
+                  <h3 className="text-base font-bold text-white mb-0.5">
                     {member.name}
                   </h3>
-                  <p className="text-xs font-medium text-slate-300 mb-4">{member.role}</p>
+                  <p className="text-xs font-medium text-[var(--color-primary)] mb-4">{member.role}</p>
                 </div>
 
-                <div className="space-y-2 pt-3 border-t border-slate-800/80 text-xs">
+                <div className="space-y-1.5 pt-3 border-t border-white/[0.06] text-xs">
                   <a
                     href={`mailto:${member.email}`}
-                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
+                    className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors truncate"
                   >
-                    <Mail className="w-3.5 h-3.5 text-[var(--color-primary)]" />
+                    <Mail className="w-3.5 h-3.5 shrink-0 text-slate-500" />
                     <span className="truncate">{member.email}</span>
                   </a>
                   <a
                     href={`tel:${member.phone.replace(/\s+/g, '')}`}
                     className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[var(--color-primary)]" />
+                    <Phone className="w-3.5 h-3.5 shrink-0 text-slate-500" />
                     <span>{member.phone}</span>
                   </a>
                 </div>

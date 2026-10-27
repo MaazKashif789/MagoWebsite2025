@@ -30,20 +30,20 @@ const Home: React.FC = () => {
   }, [location.state]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#090D14] text-slate-100">
       <main>
-        {/* 3D Molecular Hero Section */}
+        {/* Subtle Molecular Hero Section */}
         <Hero />
 
-        {/* Real Enterprise Scale Metrics */}
+        {/* Enterprise Scale Metrics */}
         <Stats />
 
         {/* About Heritage & Direct Sourcing */}
         <About />
 
-        {/* Global Trade & Sourcing Network 3D Map */}
-        <section id="network" className="py-20 bg-slate-950 border-t border-slate-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Global Trade & Sourcing Network Map */}
+        <section id="network" className="py-20 bg-[#090D14] border-b border-white/[0.06]">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <GlobalTradeVisualizer />
           </div>
         </section>
