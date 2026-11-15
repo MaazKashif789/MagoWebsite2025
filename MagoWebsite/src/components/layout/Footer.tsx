@@ -15,25 +15,29 @@ const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-3">
             <img
               src={logoWhite}
-              alt="Mago Enterprises"
+              alt="Mago Enterprises (PVT) LTD"
               className="h-8 w-auto object-contain"
             />
+            <p className="text-xs text-[var(--color-primary)] font-mono">
+              "Sourcing the corner of the globe"
+            </p>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed font-light">
-              Mago Enterprises is an international importer, supplier, and distributor of high-performance chemicals. Sourcing directly from 200+ manufacturers across 20+ countries since 1992.
+              Mago Enterprises (PVT) LTD is Pakistan's premier Indenter, Importer, Trader, Stockist, and Distributor of industrial raw materials. Founded on direct Pacific Rim sourcing partnerships since 1993 with operating teams in 4 domestic locations.
             </p>
           </div>
 
           {/* Core Categories */}
           <div className="md:col-span-4 space-y-2.5">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
-              Primary Chemical Categories
+              Primary Chemical Divisions
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-400 font-light">
-              <li>Acrylates & Monomers (BAM, 2-EHA, MMA)</li>
-              <li>Industrial Solvents & Glycols (MEG, DEG, IPA)</li>
-              <li>Organic Acids & Anhydrides (Glacial Acetic Acid)</li>
-              <li>Surfactants & Oleochemicals (SLES, Glycerine)</li>
-              <li>Polymers, Resins & Performance Pigments (TiO₂)</li>
+              <li>General Plastics & Engineering Polymers (PVC, PP, EVA, ABS)</li>
+              <li>Rubbers, Elastomers & Agro Dehusking Rice Rolls</li>
+              <li>PU Systems, MDI, TDI & Polyols for Footwear & Leather</li>
+              <li>Industrial Plasticizers (DOP, DINP, Non-Phthalate DOTP)</li>
+              <li>Blowing Agents, Crosslinkers & Ca/Zn Stabilizers</li>
+              <li>Solvents, Pigments (TiO₂), Anhydrides & Oxides</li>
             </ul>
           </div>
 
@@ -49,7 +53,7 @@ const Footer: React.FC = () => {
                     navigate('/');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors cursor-pointer"
                 >
                   Home
                 </button>
@@ -57,24 +61,29 @@ const Footer: React.FC = () => {
               <li>
                 <button
                   onClick={() => navigate('/products')}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors cursor-pointer"
                 >
-                  Chemical Catalog
+                  Full Chemical Catalog (140+ Products)
                 </button>
               </li>
               <li>
                 <a href="/#about" className="hover:text-white transition-colors">
-                  About Our Heritage
+                  About Our Heritage (Est. 1993)
+                </a>
+              </li>
+              <li>
+                <a href="/#services" className="hover:text-white transition-colors">
+                  Distribution Strengths & Indenting
                 </a>
               </li>
               <li>
                 <a href="/#network" className="hover:text-white transition-colors">
-                  Global Trade Network
+                  Global Trade Corridors
                 </a>
               </li>
               <li>
                 <a href="/#contact" className="hover:text-white transition-colors">
-                  Contact Sales Desk
+                  Contact Commercial Desk
                 </a>
               </li>
             </ul>
@@ -84,15 +93,15 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
-          <p>&copy; {new Date().getFullYear()} Mago Enterprises. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-xs text-slate-400 font-light">
-            <span>20+ Countries</span>
+          <p>&copy; {new Date().getFullYear()} Mago Enterprises (PVT) LTD. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400 font-light">
+            <span>Sourcing the corner of the globe</span>
             <span>•</span>
-            <span>200+ Suppliers</span>
+            <span>4 Hubs Across Pakistan</span>
             <span>•</span>
-            <span>500+ Clients</span>
+            <span>Pacific Rim to Worldwide</span>
             <span>•</span>
-            <span>Family-Owned Since 1992</span>
+            <span>Since 1993</span>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Layers } from 'lucide-react';
 
 // High-res imagery for chemical portfolios
 import drumsImg from '../../assets/drums.jpg';
@@ -10,6 +10,7 @@ import solventsImg from '../../assets/solvents.jpg';
 import containersImg from '../../assets/containers.jpg';
 import polymersImg from '../../assets/polymers.jpg';
 import pigmentsImg from '../../assets/pigments.jpg';
+import miscImg from '../../assets/misc.jpg';
 
 interface ChemicalCategory {
   title: string;
@@ -23,57 +24,57 @@ interface ChemicalCategory {
 
 const chemicalCategories: ChemicalCategory[] = [
   {
-    title: 'Acrylates & Monomers',
-    badge: 'Monomers',
-    grade: '99.5% Min Tech Grade',
-    products: ['Butyl Acrylate (BA)', 'Methyl Methacrylate (MMA)', '2-Ethylhexyl Acrylate (2-EHA)', 'Vinyl Acetate (VAM)'],
-    applications: 'Emulsion polymers, architectural paints, acrylic emulsions, and textile adhesives.',
-    origin: 'China & Taiwan Direct Plants',
-    image: drumsImg
-  },
-  {
-    title: 'Industrial Solvents & Glycols',
-    badge: 'Solvents',
-    grade: 'High-Purity Industrial',
-    products: ['Monoethylene Glycol (MEG)', 'Diethylene Glycol (DEG)', 'Isopropyl Alcohol (IPA)', 'Acetone & MEK'],
-    applications: 'Industrial coatings, printing inks, polyester fiber (PET), and chemical synthesis.',
-    origin: 'South Korea & Saudi Arabia',
-    image: solventsImg
-  },
-  {
-    title: 'Organic Acids & Anhydrides',
-    badge: 'Organic Acids',
-    grade: '99.85% Glacial Grade',
-    products: ['Acetic Acid Glacial (GAA)', 'Formic Acid 85%', 'Maleic Anhydride (MA)', 'Phthalic Anhydride'],
-    applications: 'Textile dyeing, vinyl acetate synthesis, leather tanning, and chemical intermediates.',
-    origin: 'Direct Global Petrochemical Producers',
-    image: containersImg
-  },
-  {
-    title: 'Polymers, Resins & Compounds',
+    title: 'General & Engineering Plastics',
     badge: 'Polymers',
-    grade: 'K-67 / K-57 Virgin',
-    products: ['PVC Suspension Resin', 'PET Bottle Resin', 'EVA Copolymers', 'Polypropylene (PP)'],
-    applications: 'Rigid uPVC pipes, packaging films, automotive profiles, and plastic compounding.',
-    origin: 'Japan, Taiwan & South Korea',
+    grade: 'Virgin & High Flow',
+    products: ['PVC (SG5, K67, K70)', 'Polypropylene (PP)', 'EVA (VA 5%–40%)', 'ABS & Polycarbonate'],
+    applications: 'Rigid uPVC pipes, cables, footwear, automotive parts, housings, packaging films, and medical devices.',
+    origin: 'Pacific Rim (China, Taiwan, Japan & South Korea)',
     image: polymersImg
   },
   {
-    title: 'Surfactants & Oleochemicals',
-    badge: 'Oleochemicals',
-    grade: 'USP & Cosmetic Grade',
-    products: ['SLES 70% Active', 'LABSA 96%', 'Refined Glycerine 99.7% USP', 'Fatty Alcohol'],
-    applications: 'Liquid detergents, personal care formulations, soaps, and industrial cleaners.',
-    origin: 'Indonesia & Malaysia Refineries',
+    title: 'Rubbers & High-Performance Elastomers',
+    badge: 'Rubbers',
+    grade: 'RSS3, TSR20, LATEX',
+    products: ['Natural Rubber (NR)', 'SBR & SSBR', 'NBR, EPDM & Viton', 'Rice Rubber Rolls'],
+    applications: 'Tires, conveyor belts, footwear, fuel hoses, agro-milling dehusking, and automotive weather seals.',
+    origin: 'Thailand, Vietnam, Malaysia, Sri Lanka & Japan',
+    image: drumsImg
+  },
+  {
+    title: 'Polyurethane (PU) & PU Raw Materials',
+    badge: 'PU Systems',
+    grade: 'Pure MDI & Polyols',
+    products: ['MDI & Polymeric MDI', 'TDI 80/20', 'Polyether & Polyester Polyols', 'Shoe & Leather PU Systems'],
+    applications: 'Footwear soles & insoles, synthetic leather coatings, rigid insulation foams, and automotive finishes.',
+    origin: 'Tier-1 International Petrochemical Plants',
+    image: drumsImg
+  },
+  {
+    title: 'Industrial Plasticizers',
+    badge: 'Plasticizers',
+    grade: 'Standard & Food/Pharma',
+    products: ['DOP & DINP', 'Non-Phthalate DOTP', 'DOA (Low Temp)', 'ATBC, DINCH & CP 52%'],
+    applications: 'Flexible PVC, cables, automotive interiors, artificial leather, medical tubing, and flame-retardant coatings.',
+    origin: 'Direct Global Manufacturers',
     image: solventsImg
   },
   {
-    title: 'Pigments & Performance Minerals',
-    badge: 'Minerals',
-    grade: '≥ 94% Rutile Content',
-    products: ['Titanium Dioxide TiO₂ (Rutile)', 'TiO₂ (Anatase)', 'Carbon Black', 'Barium Sulfate'],
-    applications: 'Plastic masterbatches, architectural coatings, industrial inks, and paper opacity.',
-    origin: 'Tier-1 Certified Global Producers',
+    title: 'Blowing Agents, Crosslinkers & Stabilizers',
+    badge: 'Additives',
+    grade: 'High Purity & Custom Blends',
+    products: ['Modified Azodicarbonamide', 'DCP 40%/98%', 'Zinc & Calcium Stearate', 'One-Pack Ca/Zn Stabilizers'],
+    applications: 'EVA foam expansion, rubber vulcanization, PVC thermal stability, pipe extrusion, and cable compounds.',
+    origin: 'Specialty Synthesis Partners (Asia & Europe)',
+    image: containersImg
+  },
+  {
+    title: 'Solvents, Specialty Chemicals & Oxides',
+    badge: 'Solvents & Oxides',
+    grade: 'Technical & USP Grade',
+    products: ['Glacial Acetic Acid', 'MEK, Acetone & IPA', 'Titanium Dioxide (TiO₂)', 'Zinc & Magnesium Oxide'],
+    applications: 'Paints & architectural coatings, textile dyeing, printing inks, rubber vulcanization, and plastics pigmenting.',
+    origin: 'Mid-America, Europe, South Korea & China',
     image: pigmentsImg
   }
 ];
@@ -90,14 +91,14 @@ const Products: React.FC = () => {
             <div className="flex items-center gap-2 mb-1.5">
               <span className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
               <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)] font-mono">
-                Product Portfolios
+                Featured Product Portfolios
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-              Industrial Chemical Supplies
+              Industrial Chemical & Raw Material Supply
             </h2>
             <p className="text-slate-400 text-sm max-w-xl mt-1.5 font-light leading-relaxed">
-              Direct import supply lines for primary monomers, solvents, acids, and polymer resins backed by complete Certificates of Analysis (CoA) and dedicated batch testing.
+              Serving footwear, rubber, leather, plastics, and coatings industries with verified batch consistency, full Certificate of Analysis (CoA), and dedicated logistics.
             </p>
           </div>
 
@@ -105,7 +106,8 @@ const Products: React.FC = () => {
             onClick={() => navigate('/products')}
             className="self-start md:self-end px-5 py-2.5 rounded-lg bg-[var(--color-primary)] hover:bg-[#22a802] text-slate-950 font-semibold text-xs tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-lg hover:shadow-[var(--color-primary)]/20"
           >
-            <span>View Full Catalog</span>
+            <Layers className="w-3.5 h-3.5 mr-1" />
+            <span>Browse All 13 Divisions</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
           </Button>
         </div>

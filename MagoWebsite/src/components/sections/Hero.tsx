@@ -6,7 +6,7 @@ import hero2 from '../../assets/Hero/Hero Image 2.jpg';
 import hero3 from '../../assets/Hero/Hero Image 1.jpg';
 import { Button } from "@/components/ui/button";
 import { MolecularHeroCanvas } from '../3d/MolecularHeroCanvas';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();
@@ -47,29 +47,29 @@ const Hero: React.FC = () => {
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
         {/* Minimalist Origin Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
-          <span>Established 1992 • Global Chemical Distribution</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />
+          <span>Mago Enterprises (PVT) LTD • Indenting, Import & Distribution Since 1993</span>
         </div>
 
         {/* Clean, High-Impact Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">
-          Global Chemical Sourcing &{' '}
-          <span className="text-[var(--color-primary)]">Industrial Supply</span>
+          Sourcing the Corner of the Globe with{' '}
+          <span className="text-[var(--color-primary)]">Unmatched Precision</span>
         </h1>
 
         {/* Crisp Subtitle */}
         <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-          A family-owned enterprise importing essential raw materials from 20+ countries, connecting 200+ global chemical manufacturers with over 500 industrial clients worldwide.
+          Pakistan's premier Indenter, Importer, Trader, Stockist, and Distributor of raw materials. Bridging leading chemical manufacturers across the Pacific Rim with domestic industrial leaders in footwear, rubber, leather, plastics, and coatings.
         </p>
 
-        {/* Minimalist Action Buttons */}
+        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
           <Button
             onClick={() => navigate('/products')}
             className="w-full sm:w-auto px-7 py-2.5 rounded-md bg-[var(--color-primary)] hover:bg-[#22a802] text-slate-950 font-semibold text-sm transition-colors cursor-pointer"
           >
-            <span>Explore Chemical Catalog</span>
+            <span>Explore 13 Chemical Divisions</span>
             <ArrowRight className="w-4 h-4 ml-1.5" />
           </Button>
 
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
             href="#contact"
             className="w-full sm:w-auto px-7 py-2.5 rounded-md bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.1] text-white font-medium text-sm transition-colors text-center"
           >
-            Request Quotation
+            Request Commercial Quote
           </a>
         </div>
       </div>

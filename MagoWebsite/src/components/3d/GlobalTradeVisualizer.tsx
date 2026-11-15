@@ -1,6 +1,6 @@
 // src/components/3d/GlobalTradeVisualizer.tsx
 import React, { useState } from 'react';
-import { Ship, Anchor, Sparkles } from 'lucide-react';
+import { Ship, Anchor, Sparkles, MapPin, Globe } from 'lucide-react';
 import worldMapImg from '../../assets/world_trade_map.jpg';
 
 interface TradeHub {
@@ -15,53 +15,67 @@ interface TradeHub {
 const tradeHubs: TradeHub[] = [
   {
     id: 'pk',
-    name: 'Pakistan (Lahore & Karachi)',
-    region: 'Central Import & Distribution HQ',
-    specialty: 'Bulk storage terminals, bonded port warehouses & nationwide fleet delivery',
+    name: 'Pakistan (Lahore, Karachi & 4 Locations)',
+    region: 'Central Import, Stockist & Indenting HQ',
+    specialty: 'Full-time teams in 4 domestic hubs, Port Qasim & Karachi terminals, nationwide warehousing & distribution',
     coords: { x: 65, y: 49 },
     isHQ: true
   },
   {
     id: 'cn',
     name: 'China & Taiwan',
-    region: 'East Asia',
-    specialty: 'Industrial monomers, acrylates, vinyl esters & synthetic organics',
+    region: 'Pacific Rim Hub',
+    specialty: 'General polymers (PVC, EVA), engineering plastics, acrylates, blowing agents & stabilizers',
     coords: { x: 77, y: 44 }
   },
   {
-    id: 'kr',
-    name: 'South Korea & Japan',
-    region: 'East Asia',
-    specialty: 'High-purity solvents, virgin polymer resins & optical-grade additives',
+    id: 'kr-jp',
+    name: 'Japan & South Korea',
+    region: 'East Asia High-Tech Hub',
+    specialty: 'High-purity solvents, virgin polymers (POM, PC, ABS), specialty synthetic rubbers (HNBR, SSBR)',
     coords: { x: 84, y: 39 }
   },
   {
-    id: 'sea',
-    name: 'Indonesia & Malaysia',
-    region: 'Southeast Asia',
-    specialty: 'Refined oleochemicals, pure glycerine 99.7% & fatty acid derivatives',
-    coords: { x: 77, y: 64 }
+    id: 'th-vn',
+    name: 'Thailand & Vietnam',
+    region: 'Southeast Asia Rubber Hub',
+    specialty: 'Natural rubber (RSS3, TSR20, LATEX), EVA release agents, agro-milling rice rubber rolls',
+    coords: { x: 75, y: 53 }
   },
   {
-    id: 'me',
-    name: 'Middle East (Saudi Arabia & UAE)',
-    region: 'Middle East',
-    specialty: 'Primary petrochemical feedstocks, glycols (MEG/DEG) & polyolefins',
-    coords: { x: 58, y: 46 }
+    id: 'my-sg',
+    name: 'Malaysia & Singapore',
+    region: 'Pacific Rim Trade Hub',
+    specialty: 'Oleochemicals, USP glycerin 99.7%, specialty solvents & advanced polyols',
+    coords: { x: 76, y: 59 }
+  },
+  {
+    id: 'id',
+    name: 'Indonesia',
+    region: 'Southeast Asia Hub',
+    specialty: 'Natural/synthetic rubber, plasticizers, bio-plastics & industrial chemical intermediates',
+    coords: { x: 79, y: 65 }
+  },
+  {
+    id: 'lk',
+    name: 'Sri Lanka',
+    region: 'South Asia Rubber Corridor',
+    specialty: 'Natural rubber grades, skim block, latex concentrates & industrial elastomers',
+    coords: { x: 67, y: 58 }
   },
   {
     id: 'eu',
-    name: 'Western Europe',
-    region: 'Europe',
-    specialty: 'Precision specialty chemicals, catalysts & technical performance additives',
+    name: 'REACH-Regulated Europe',
+    region: 'Europe Specialty Hub',
+    specialty: 'Specialty catalysts, performance additives, aliphatic isocyanates (HDI/IPDI) & engineering resins',
     coords: { x: 48, y: 32 }
   },
   {
-    id: 'us',
-    name: 'United States',
-    region: 'North America',
-    specialty: 'Specialty coatings, polymer modifiers & performance intermediates',
-    coords: { x: 21, y: 40 }
+    id: 'us-br',
+    name: 'The Americas (USA & Brazil)',
+    region: 'Americas Petrochemical Corridor',
+    specialty: 'Primary petrochemical feedstocks, bio-polymers, specialty plasticizers & industrial solvents',
+    coords: { x: 25, y: 45 }
   }
 ];
 
@@ -76,32 +90,32 @@ export const GlobalTradeVisualizer: React.FC = () => {
           <div className="flex items-center gap-2 mb-1.5">
             <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
             <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)] font-mono">
-              Global Sourcing Infrastructure
+              Sourcing the Corner of the Globe
             </span>
           </div>
           <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Direct Import Corridors From 20+ Countries
+            Global Supply Corridors & Domestic Footprint
           </h3>
           <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl font-light">
-            Supplying direct chemical manufacturers to over 500 industrial plants across Pakistan via certified maritime shipping lines.
+            Founded on direct Pacific Rim sourcing with global access across Europe and the Americas, servicing major domestic industries from 4 locations across Pakistan.
           </p>
         </div>
 
         {/* Minimalist Metrics */}
         <div className="flex items-center gap-6 text-left self-start md:self-end">
           <div>
-            <div className="text-2xl font-bold text-white tracking-tight">20+</div>
-            <div className="text-[11px] text-slate-400 font-mono">Source Nations</div>
+            <div className="text-2xl font-bold text-white tracking-tight">4 Hubs</div>
+            <div className="text-[11px] text-slate-400 font-mono">Across Pakistan</div>
           </div>
           <div className="w-px h-8 bg-white/[0.08]" />
           <div>
-            <div className="text-2xl font-bold text-white tracking-tight">200+</div>
-            <div className="text-[11px] text-slate-400 font-mono">Vetted Producers</div>
+            <div className="text-2xl font-bold text-white tracking-tight">10+</div>
+            <div className="text-[11px] text-slate-400 font-mono">Pacific Rim Nations</div>
           </div>
           <div className="w-px h-8 bg-white/[0.08]" />
           <div>
-            <div className="text-2xl font-bold text-white tracking-tight">500+</div>
-            <div className="text-[11px] text-slate-400 font-mono">Industrial Plants</div>
+            <div className="text-2xl font-bold text-white tracking-tight">13</div>
+            <div className="text-[11px] text-slate-400 font-mono">Product Divisions</div>
           </div>
         </div>
       </div>
@@ -167,7 +181,7 @@ export const GlobalTradeVisualizer: React.FC = () => {
 
               {/* Floating Rich Tooltip on Hover */}
               {isHovered && (
-                <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 p-3 rounded-lg bg-[#0E131F]/95 border border-[var(--color-primary)]/40 backdrop-blur-md shadow-2xl z-30 pointer-events-none transition-all">
+                <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-72 p-3.5 rounded-lg bg-[#0E131F]/95 border border-[var(--color-primary)]/40 backdrop-blur-md shadow-2xl z-30 pointer-events-none transition-all">
                   <div className="flex items-center justify-between text-[11px] mb-1">
                     <span className="font-bold text-white">{hub.name}</span>
                     <span className="text-[10px] text-[var(--color-primary)] font-mono">{hub.region}</span>
@@ -190,7 +204,7 @@ export const GlobalTradeVisualizer: React.FC = () => {
           <div className="w-px h-3 bg-white/[0.12]" />
           <div className="flex items-center gap-1.5 text-slate-400 hidden sm:flex">
             <Ship className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-            <span>ISO Tank Containers & Bulk Liquid Carriers</span>
+            <span>Direct Indenting & Bonded Stockist Facilities</span>
           </div>
         </div>
       </div>

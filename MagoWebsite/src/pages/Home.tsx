@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Hero from '../components/sections/Hero';
 import Stats from '../components/sections/Stats';
 import About from '../components/sections/About';
+import Services from '../components/sections/Services';
 import { GlobalTradeVisualizer } from '../components/3d/GlobalTradeVisualizer';
 import Products from '../components/sections/Products';
 import Team from '@/components/sections/Team';
@@ -40,6 +41,9 @@ const Home: React.FC = () => {
 
         {/* About Heritage & Direct Sourcing */}
         <About />
+
+        {/* 4 Pillars of Distribution Strengths & Indenting Bridge */}
+        <Services />
 
         {/* Global Trade & Sourcing Network Map */}
         <section id="network" className="py-20 bg-[#090D14] border-b border-white/[0.06]">

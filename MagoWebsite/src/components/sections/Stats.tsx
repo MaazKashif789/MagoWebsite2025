@@ -5,28 +5,28 @@ import CountUp from 'react-countup';
 const Stats: React.FC = () => {
   const statsData = [
     {
-      number: 20,
-      suffix: '+',
-      title: 'Countries Sourced',
-      description: 'Strategic chemical origins across the Pacific Rim, Europe, and the Americas'
-    },
-    {
-      number: 200,
-      suffix: '+',
-      title: 'Global Manufacturers',
-      description: 'Direct partnerships with primary synthesis plants and petrochemical refineries'
-    },
-    {
-      number: 500,
-      suffix: '+',
-      title: 'Enterprise Clients',
-      description: 'Supplying manufacturers across textiles, coatings, plastics, and agriculture'
-    },
-    {
       number: 30,
       suffix: '+',
-      title: 'Years Heritage',
-      description: 'Family-owned and operated since 1992, founded on integrity and reliable supply'
+      title: 'Years Industrial Heritage',
+      description: 'Family-owned & operated since 1993, pioneering chemical imports & indenting'
+    },
+    {
+      number: 4,
+      suffix: ' Hubs',
+      title: 'Offices Across Pakistan',
+      description: 'Full-time teams in 4 key domestic industrial centers ensuring localized service'
+    },
+    {
+      number: 13,
+      suffix: ' Divisions',
+      title: 'Chemical Categories',
+      description: 'Covering polymers, engineering plastics, rubbers, PU, plasticizers, solvents & oxides'
+    },
+    {
+      number: 140,
+      suffix: '+',
+      title: 'Certified Products',
+      description: 'Direct sourcing originating from the Pacific Rim, Europe, and the Americas'
     }
   ];
 
@@ -41,7 +41,7 @@ const Stats: React.FC = () => {
             >
               <div className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2 flex items-baseline">
                 <CountUp end={stat.number} duration={2} enableScrollSpy scrollSpyOnce />
-                <span className="text-[var(--color-primary)] ml-0.5">{stat.suffix}</span>
+                <span className="text-[var(--color-primary)] ml-0.5 text-2xl sm:text-3xl">{stat.suffix}</span>
               </div>
               <h3 className="text-sm font-semibold text-white mb-1">{stat.title}</h3>
               <p className="text-xs text-slate-400 leading-relaxed font-light">{stat.description}</p>

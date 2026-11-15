@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
+    { name: 'Capabilities', href: '#services' },
     { name: 'Global Reach', href: '#network' },
     { name: 'Products', href: '/products' },
     { name: 'Contact', href: '#contact' }
@@ -73,13 +74,13 @@ const Navbar: React.FC = () => {
           >
             <img
               src={logo}
-              alt="Mago Enterprises"
+              alt="Mago Enterprises (PVT) LTD"
               className="h-8 sm:h-9 w-auto object-contain"
             />
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-7">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -92,7 +93,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Right Minimalist Action Button */}
+          {/* Right Action Button */}
           <div className="hidden md:flex items-center">
             <a
               href="#contact"
