@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Layers, Globe } from 'lucide-react';
 
-// High-res imagery for chemical portfolios
-import drumsImg from '../../assets/drums.jpg';
-import solventsImg from '../../assets/solvents.jpg';
-import containersImg from '../../assets/containers.jpg';
-import polymersImg from '../../assets/polymers.jpg';
-import pigmentsImg from '../../assets/pigments.jpg';
+// Macro photography of raw chemical products (no packaging/drums)
+import polymerPelletsImg from '../../assets/products/polymer-pellets.jpg';
+import naturalRubberImg from '../../assets/products/natural-rubber.jpg';
+import polyurethaneLiquidImg from '../../assets/products/polyurethane-liquid.jpg';
+import plasticizerLiquidImg from '../../assets/products/plasticizer-liquid.jpg';
+import blowingAgentImg from '../../assets/products/blowing-agent-powder.jpg';
+import chemicalSolventsImg from '../../assets/products/chemical-solvents.jpg';
 
 interface ChemicalCategory {
   title: string;
@@ -29,7 +30,7 @@ const chemicalCategories: ChemicalCategory[] = [
     products: ['PVC (SG5, K67, K70)', 'Polypropylene (PP)', 'EVA (VA 5%–40%)', 'ABS & Polycarbonate'],
     applications: 'Rigid uPVC pipes, cables, footwear, automotive parts, packaging films, and medical devices.',
     origin: 'China, Taiwan, Japan & South Korea',
-    image: polymersImg
+    image: polymerPelletsImg
   },
   {
     title: 'Rubbers & High-Performance Elastomers',
@@ -38,7 +39,7 @@ const chemicalCategories: ChemicalCategory[] = [
     products: ['Natural Rubber (NR)', 'SBR & SSBR', 'NBR, EPDM & Viton', 'Rice Rubber Rolls'],
     applications: 'Tires, conveyor belts, footwear, fuel hoses, agro-milling dehusking, and automotive weather seals.',
     origin: 'Thailand, Vietnam, Malaysia & Sri Lanka',
-    image: drumsImg
+    image: naturalRubberImg
   },
   {
     title: 'Polyurethane (PU) & PU Raw Materials',
@@ -47,7 +48,7 @@ const chemicalCategories: ChemicalCategory[] = [
     products: ['MDI & Polymeric MDI', 'TDI 80/20', 'Polyether & Polyester Polyols', 'Shoe & Leather PU Systems'],
     applications: 'Footwear soles & insoles, synthetic leather coatings, rigid insulation foams, and industrial finishes.',
     origin: 'Tier-1 International Petrochemical Plants',
-    image: drumsImg
+    image: polyurethaneLiquidImg
   },
   {
     title: 'Industrial Plasticizers',
@@ -56,7 +57,7 @@ const chemicalCategories: ChemicalCategory[] = [
     products: ['DOP & DINP', 'Non-Phthalate DOTP', 'DOA (Low Temp)', 'ATBC, DINCH & CP 52%'],
     applications: 'Flexible PVC, cables, automotive interiors, artificial leather, medical tubing, and flame-retardant vinyl.',
     origin: 'Direct Global Manufacturers',
-    image: solventsImg
+    image: plasticizerLiquidImg
   },
   {
     title: 'Blowing Agents, Crosslinkers & Stabilizers',
@@ -65,7 +66,7 @@ const chemicalCategories: ChemicalCategory[] = [
     products: ['Modified Azodicarbonamide', 'DCP 40%/98%', 'Zinc & Calcium Stearate', 'One-Pack Ca/Zn Stabilizers'],
     applications: 'EVA foam expansion, rubber vulcanization, PVC thermal stability, pipe extrusion, and cable compounds.',
     origin: 'Specialty Synthesis Partners (Asia & Europe)',
-    image: containersImg
+    image: blowingAgentImg
   },
   {
     title: 'Solvents, Specialty Chemicals & Oxides',
@@ -74,7 +75,7 @@ const chemicalCategories: ChemicalCategory[] = [
     products: ['Glacial Acetic Acid', 'MEK, Acetone & IPA', 'Titanium Dioxide (TiO₂)', 'Zinc & Magnesium Oxide'],
     applications: 'Paints & architectural coatings, textile dyeing, printing inks, rubber vulcanization, and plastics pigmenting.',
     origin: 'Mid-America, Europe, South Korea & China',
-    image: pigmentsImg
+    image: chemicalSolventsImg
   }
 ];
 
@@ -120,16 +121,16 @@ const Products: React.FC = () => {
               className="rounded-xl overflow-hidden bg-[#0B0F17] border border-white/[0.07] hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:shadow-[var(--color-primary)]/5"
             >
               <div>
-                {/* Visual Image Header - Clean & Minimalist */}
-                <div className="relative h-40 w-full overflow-hidden bg-[#070A0F]">
+                {/* Visual Image Header - Realistic Macro Shot of Substance Itself */}
+                <div className="relative h-44 w-full overflow-hidden bg-[#070A0F]">
                   <img
                     src={cat.image}
                     alt={cat.title}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/25 to-transparent" />
                   
-                  {/* Subtle, Minimalist Division Tag */}
+                  {/* Subtle Division Tag */}
                   <span className="absolute top-3 left-3 text-[10px] font-mono tracking-wider uppercase bg-[#090D14]/85 backdrop-blur-md px-2.5 py-1 rounded text-slate-300 border border-white/10">
                     {cat.badge}
                   </span>
