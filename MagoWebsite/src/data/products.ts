@@ -1,4 +1,13 @@
-import polymerPelletsImg from '../assets/products/polymer-pellets.jpg';
+import pvcPowderImg from '../assets/products/pvc-powder.jpg';
+import ppPelletsImg from '../assets/products/pp-pellets.jpg';
+import pePelletsImg from '../assets/products/polymer-pellets.jpg';
+import evaBeadsImg from '../assets/products/recycled-mixed-pellets.jpg';
+import recycledFlakesImg from '../assets/polymers.jpg';
+import poePelletsImg from '../assets/products/engineering-plastics.jpg';
+import psCrystalsImg from '../assets/products/plasticizer-liquid.jpg';
+import petChipsImg from '../assets/products/chemical-solvents.jpg';
+import ptaPowderImg from '../assets/products/mineral-fillers.jpg';
+
 import naturalRubberImg from '../assets/products/natural-rubber.jpg';
 import polyurethaneLiquidImg from '../assets/products/polyurethane-liquid.jpg';
 import plasticizerLiquidImg from '../assets/products/plasticizer-liquid.jpg';
@@ -8,6 +17,9 @@ import pigmentPowdersImg from '../assets/products/pigment-powders.jpg';
 import mineralFillersImg from '../assets/products/mineral-fillers.jpg';
 import metalOxidesImg from '../assets/products/metal-oxides.jpg';
 import engineeringPlasticsImg from '../assets/products/engineering-plastics.jpg';
+import miscImg from '../assets/misc.jpg';
+import pigmentsRawImg from '../assets/pigments.jpg';
+import solventsRawImg from '../assets/solvents.jpg';
 
 export interface ChemicalProduct {
   id: string;
@@ -45,7 +57,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3904',
     grades: ['SG5', 'SG7', 'SG8', 'K67', 'K70'],
     useCase: 'Pipes, profiles, cables, medical devices, flooring, films, sheets.',
-    image: polymerPelletsImg
+    image: pvcPowderImg
   },
   {
     id: 'gp-2',
@@ -54,7 +66,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3902',
     grades: ['Homo Polymer', 'Random Copolymer', 'Impact Copolymer'],
     useCase: 'Packaging, automotive parts, textiles, household goods, fibers.',
-    image: polymerPelletsImg
+    image: ppPelletsImg
   },
   {
     id: 'gp-3',
@@ -63,7 +75,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3901',
     grades: ['LDPE', 'LLDPE', 'HDPE'],
     useCase: 'Films, bags, pipes, containers, bottles, geomembranes.',
-    image: polymerPelletsImg
+    image: pePelletsImg
   },
   {
     id: 'gp-4',
@@ -72,7 +84,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3901.3',
     grades: ['VA Content 5%–40%'],
     useCase: 'Footwear, adhesives, films, foams, packaging, toys.',
-    image: polymerPelletsImg
+    image: evaBeadsImg
   },
   {
     id: 'gp-5',
@@ -81,7 +93,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: 'Mixed (3901, 3902, 3915)',
     grades: ['Depends on source material'],
     useCase: 'Sustainable packaging, molded products, construction applications, fibers.',
-    image: polymerPelletsImg
+    image: recycledFlakesImg
   },
   {
     id: 'gp-6',
@@ -90,7 +102,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3901.9',
     grades: ['Industrial Grade'],
     useCase: 'Adhesives, sealants, flexible packaging, impact modifiers, automotive parts.',
-    image: polymerPelletsImg
+    image: poePelletsImg
   },
   {
     id: 'gp-7',
@@ -99,7 +111,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3903',
     grades: ['GPPS', 'HIPS'],
     useCase: 'Packaging, household goods, insulation.',
-    image: polymerPelletsImg
+    image: psCrystalsImg
   },
   {
     id: 'gp-8',
@@ -108,7 +120,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3907',
     grades: ['Bottle Grade', 'Film Grade'],
     useCase: 'Bottles, films, fibers.',
-    image: polymerPelletsImg
+    image: petChipsImg
   },
   {
     id: 'gp-9',
@@ -117,7 +129,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917',
     grades: ['Fiber Grade', 'PET Grade'],
     useCase: 'Production of polyester fiber and PET.',
-    image: polymerPelletsImg
+    image: ptaPowderImg
   },
 
   // 2. Engineering Plastics
@@ -137,7 +149,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3903.2',
     grades: ['Standard', 'Impact Resistant'],
     useCase: 'Appliances, medical devices, lamps.',
-    image: engineeringPlasticsImg
+    image: ppPelletsImg
   },
   {
     id: 'ep-3',
@@ -146,7 +158,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3907.4',
     grades: ['2805', '3103'],
     useCase: 'Lenses, automotive glazing, electronics.',
-    image: engineeringPlasticsImg
+    image: pePelletsImg
   },
   {
     id: 'ep-4',
@@ -155,7 +167,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3908.1',
     grades: ['PA6 (B301)', 'PA66 (A216)'],
     useCase: 'Engineering components, fibers.',
-    image: engineeringPlasticsImg
+    image: evaBeadsImg
   },
   {
     id: 'ep-5',
@@ -164,7 +176,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3907.1',
     grades: ['M90', 'Hostaform C9021'],
     useCase: 'Gears, fasteners, precision parts.',
-    image: engineeringPlasticsImg
+    image: pvcPowderImg
   },
   {
     id: 'ep-6',
@@ -173,7 +185,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3906.9',
     grades: ['GM-20', 'CM-205'],
     useCase: 'Lighting, signs, automotive parts.',
-    image: engineeringPlasticsImg
+    image: psCrystalsImg
   },
 
   // 3. Bio-Plastics
@@ -184,7 +196,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3907.99',
     grades: ['PLA 2003D', '4032D'],
     useCase: 'Compostable packaging, 3D-printing filament & fibers.',
-    image: polymerPelletsImg
+    image: ppPelletsImg
   },
   {
     id: 'bp-2',
@@ -193,7 +205,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3916.9',
     grades: ['PHA 1', 'PHA 3'],
     useCase: 'Biodegradable films, medical implants & coatings.',
-    image: polymerPelletsImg
+    image: pePelletsImg
   },
 
   // 4. Rubbers & Elastomers
@@ -222,7 +234,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.19',
     grades: ['1723', '1728'],
     useCase: 'High-performance tires, treads.',
-    image: naturalRubberImg
+    image: engineeringPlasticsImg
   },
   {
     id: 're-4',
@@ -240,7 +252,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.99',
     grades: ['Zetpol 2000', 'Therban A3407'],
     useCase: 'Oil seals, O-rings.',
-    image: naturalRubberImg
+    image: engineeringPlasticsImg
   },
   {
     id: 're-6',
@@ -249,7 +261,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.7',
     grades: ['Keltan 512', '8555'],
     useCase: 'Automotive weather seals, roofing.',
-    image: naturalRubberImg
+    image: recycledFlakesImg
   },
   {
     id: 're-7',
@@ -258,7 +270,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3403.19',
     grades: ['Industrial Grade'],
     useCase: 'Facilitates demolding in rubber/EVA processing, improves surface finish.',
-    image: naturalRubberImg
+    image: chemicalSolventsImg
   },
   {
     id: 're-8',
@@ -267,7 +279,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4016.99',
     grades: ['Industrial/Agro Grade'],
     useCase: 'Used in rice milling machines for dehusking grains efficiently.',
-    image: naturalRubberImg
+    image: miscImg
   },
   {
     id: 're-9',
@@ -285,7 +297,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.99',
     grades: ['Viton A', 'B', 'GF'],
     useCase: 'Chemical seals, automotive gaskets.',
-    image: naturalRubberImg
+    image: engineeringPlasticsImg
   },
   {
     id: 're-11',
@@ -294,7 +306,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.99',
     grades: ['Kraton G', 'Kraton D'],
     useCase: 'Footwear, seals, automotive parts.',
-    image: naturalRubberImg
+    image: evaBeadsImg
   },
   {
     id: 're-12',
@@ -303,7 +315,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4001.5',
     grades: ['Whole Tire Reclaim'],
     useCase: 'Low-cost rubber goods, mats.',
-    image: naturalRubberImg
+    image: engineeringPlasticsImg
   },
   {
     id: 're-13',
@@ -330,7 +342,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.99',
     grades: ['LBR 300', 'LIR 50'],
     useCase: 'Modifier for TPE, adhesives, impact strength.',
-    image: naturalRubberImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 're-16',
@@ -348,7 +360,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.99',
     grades: ['Santoprene 201-55'],
     useCase: 'Soft-touch automotive trims, gaskets.',
-    image: naturalRubberImg
+    image: pePelletsImg
   },
   {
     id: 're-18',
@@ -357,7 +369,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '4002.99',
     grades: ['Industrial Grade'],
     useCase: 'High-temp gaskets, bakeware, medical.',
-    image: naturalRubberImg
+    image: psCrystalsImg
   },
 
   // 5. PU & PU Raw Materials
@@ -368,7 +380,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2905.32',
     grades: ['Industrial Grade'],
     useCase: 'Chain extender in PU, TPU production.',
-    image: polyurethaneLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pu-2',
@@ -377,7 +389,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2910.9',
     grades: ['Industrial Grade'],
     useCase: 'Used in water-based PU dispersions (PUDs).',
-    image: polyurethaneLiquidImg
+    image: pvcPowderImg
   },
   {
     id: 'pu-3',
@@ -386,7 +398,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2905.32',
     grades: ['Tri-functional Polyol'],
     useCase: 'Crosslinking agent in PU coatings, elastomers.',
-    image: polyurethaneLiquidImg
+    image: ptaPowderImg
   },
   {
     id: 'pu-4',
@@ -395,7 +407,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2929.1',
     grades: ['Aliphatic Diisocyanate'],
     useCase: 'UV-resistant PU coatings.',
-    image: polyurethaneLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pu-5',
@@ -404,7 +416,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2929.1',
     grades: ['Monomeric & Trimer Grades'],
     useCase: 'Automotive & industrial PU coatings.',
-    image: polyurethaneLiquidImg
+    image: plasticizerLiquidImg
   },
   {
     id: 'pu-6',
@@ -413,7 +425,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2933.39',
     grades: ['Industrial Grade'],
     useCase: 'PU synthesis solvent (used in synthetic leather).',
-    image: polyurethaneLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pu-7',
@@ -422,7 +434,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3909.5',
     grades: ['Water-based Systems'],
     useCase: 'Water-based synthetic leather, eco-friendly coatings.',
-    image: polyurethaneLiquidImg
+    image: ppPelletsImg
   },
   {
     id: 'pu-8',
@@ -458,7 +470,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3909.5',
     grades: ['Extrusion & Injection Grades'],
     useCase: 'Footwear, Gaskets, Films, Medicine.',
-    image: polyurethaneLiquidImg
+    image: pePelletsImg
   },
   {
     id: 'pu-12',
@@ -467,7 +479,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3909.3',
     grades: ['Pure MDI', 'Polymer MDI'],
     useCase: 'Foams, adhesives, coatings.',
-    image: polyurethaneLiquidImg
+    image: pvcPowderImg
   },
   {
     id: 'pu-13',
@@ -485,7 +497,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3909.3',
     grades: ['TDI-80/20', 'TDI-65/35'],
     useCase: 'Flexible foams, sealants.',
-    image: polyurethaneLiquidImg
+    image: plasticizerLiquidImg
   },
   {
     id: 'pu-15',
@@ -521,7 +533,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917.12',
     grades: ['Industrial Grade', 'Polymer Grade'],
     useCase: 'Nylon 6,6, PU production.',
-    image: polyurethaneLiquidImg
+    image: ptaPowderImg
   },
 
   // 6. Plasticizers
@@ -550,7 +562,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917.32',
     grades: ['Industrial Grade'],
     useCase: 'Cables, synthetic leather, roofing membranes.',
-    image: plasticizerLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pl-4',
@@ -568,7 +580,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917.32',
     grades: ['Industrial Grade'],
     useCase: 'Adhesives, sealants, paints.',
-    image: plasticizerLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pl-6',
@@ -595,7 +607,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '1518',
     grades: ['Industrial Grade'],
     useCase: 'Secondary plasticizer for PVC.',
-    image: plasticizerLiquidImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'pl-9',
@@ -604,7 +616,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2918.16',
     grades: ['Food/Pharma Grade'],
     useCase: 'Food packaging, toys.',
-    image: plasticizerLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pl-10',
@@ -631,7 +643,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2918.16',
     grades: ['Food Grade'],
     useCase: 'Plasticizer for sensitive applications.',
-    image: plasticizerLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pl-13',
@@ -649,7 +661,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3824.99',
     grades: ['CP 52%', 'CP 70%'],
     useCase: 'Flame-retardant plasticizer for PVC cables.',
-    image: plasticizerLiquidImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'pl-15',
@@ -658,7 +670,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2915.9',
     grades: ['Food/Pharma Grade'],
     useCase: 'Biodegradable plasticizer for packaging, pharma.',
-    image: plasticizerLiquidImg
+    image: chemicalSolventsImg
   },
   {
     id: 'pl-16',
@@ -685,7 +697,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917.32',
     grades: ['Industrial Grade'],
     useCase: 'Flexible PVC films, eco alternatives.',
-    image: plasticizerLiquidImg
+    image: chemicalSolventsImg
   },
 
   // 7. Blowing Agents & Crosslinkers
@@ -696,7 +708,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2836.3',
     grades: ['Industrial Grade'],
     useCase: 'Low-temperature foaming (eco/EVA use).',
-    image: blowingAgentImg
+    image: pvcPowderImg
   },
   {
     id: 'ba-2',
@@ -705,7 +717,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2928',
     grades: ['TSS Standard'],
     useCase: 'Foaming agent with stable decomposition for elastomers.',
-    image: blowingAgentImg
+    image: mineralFillersImg
   },
   {
     id: 'ba-3',
@@ -723,7 +735,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2926.9',
     grades: ['TAC 98%'],
     useCase: 'Co-agent with DCP for better heat resistance and tensile strength.',
-    image: blowingAgentImg
+    image: chemicalSolventsImg
   },
   {
     id: 'ba-5',
@@ -732,7 +744,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2921.51',
     grades: ['TAIC 98%'],
     useCase: 'Improves crosslinking in EVA, PE, and solar encapsulants.',
-    image: blowingAgentImg
+    image: chemicalSolventsImg
   },
   {
     id: 'ba-6',
@@ -741,7 +753,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2910.9',
     grades: ['Luperox DDM', 'F-Series'],
     useCase: 'Alternative organic peroxides for various polymers.',
-    image: blowingAgentImg
+    image: chemicalSolventsImg
   },
   {
     id: 'ba-7',
@@ -750,7 +762,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2910.9',
     grades: ['DCP 40%', 'DCP 98%'],
     useCase: 'Crosslinking of rubber, EVA.',
-    image: blowingAgentImg
+    image: ptaPowderImg
   },
   {
     id: 'ba-8',
@@ -777,7 +789,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2930.9',
     grades: ['TBBS Granules'],
     useCase: 'Accelerator for tire rubbers.',
-    image: blowingAgentImg
+    image: mineralFillersImg
   },
 
   // 8. Stabilizers, Additives & Processing Aids
@@ -788,7 +800,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2915.7',
     grades: ['Technical Grade'],
     useCase: 'Lubricant and release agent in plastics, rubber, paints; PVC heat stabilizer.',
-    image: mineralFillersImg
+    image: pvcPowderImg
   },
   {
     id: 'st-2',
@@ -806,7 +818,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2915.7',
     grades: ['Industrial Grade'],
     useCase: 'Heat stabilizer for rigid PVC pipes, cables, profiles.',
-    image: mineralFillersImg
+    image: metalOxidesImg
   },
   {
     id: 'st-4',
@@ -824,7 +836,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3823.11',
     grades: ['Industrial Grade'],
     useCase: 'Internal lubricant and stabilizer in PVC, rubber compounding, candle production, cosmetics.',
-    image: mineralFillersImg
+    image: ptaPowderImg
   },
   {
     id: 'st-6',
@@ -833,7 +845,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3909.4',
     grades: ['Industrial Grade'],
     useCase: 'Molding compounds, coatings, adhesives, electronic laminates for thermal and mechanical strength.',
-    image: mineralFillersImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'st-7',
@@ -842,7 +854,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2833.29',
     grades: ['Industrial Grade'],
     useCase: 'Excellent heat stabilizer for rigid PVC applications (pipes, fittings, conduits).',
-    image: mineralFillersImg
+    image: metalOxidesImg
   },
   {
     id: 'st-8',
@@ -851,7 +863,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3806.1',
     grades: ['A1100', 'E1440', 'VTS'],
     useCase: 'Enhances adhesion between fillers (silica, glass fibers) and polymer matrices in rubber, plastics, PU, paints.',
-    image: mineralFillersImg
+    image: chemicalSolventsImg
   },
   {
     id: 'st-9',
@@ -860,7 +872,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2921.51 / 3812.90',
     grades: ['Primary & Secondary'],
     useCase: 'Prevents oxidative degradation during processing and service life of plastics, PU, rubber, adhesives.',
-    image: mineralFillersImg
+    image: ptaPowderImg
   },
   {
     id: 'st-10',
@@ -878,7 +890,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3906.9',
     grades: ['ACR-401', 'ACR-530'],
     useCase: 'Enhances fusion, melt strength, and surface finish in rigid PVC, EVA sheets, profiles, footwear components.',
-    image: mineralFillersImg
+    image: ppPelletsImg
   },
   {
     id: 'st-12',
@@ -887,7 +899,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3903.9',
     grades: ['MBS-1', 'MBS-2'],
     useCase: 'Improves impact resistance and transparency in rigid PVC sheets, films, EVA materials.',
-    image: mineralFillersImg
+    image: evaBeadsImg
   },
   {
     id: 'st-13',
@@ -896,7 +908,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '1518',
     grades: ['Industrial Grade'],
     useCase: 'Secondary plasticizer and thermal stabilizer for flexible PVC, plasticized materials, synthetic leather.',
-    image: mineralFillersImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'st-14',
@@ -905,7 +917,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2836.5',
     grades: ['Filler Grade'],
     useCase: 'Cost-effective filler improving mechanical properties in plastics, rubber, EVA soles, paints.',
-    image: mineralFillersImg
+    image: pvcPowderImg
   },
   {
     id: 'st-15',
@@ -914,7 +926,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3812.3',
     grades: ['Industrial Grade'],
     useCase: 'Heat stabilizer for clear rigid PVC bottles, transparent sheets, and films.',
-    image: mineralFillersImg
+    image: plasticizerLiquidImg
   },
   {
     id: 'st-16',
@@ -923,7 +935,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3204.2',
     grades: ['Technical Grade'],
     useCase: 'Improves brightness and visual appearance of EVA foams, plastics, PU coatings, and paints.',
-    image: mineralFillersImg
+    image: blowingAgentImg
   },
 
   // 9. Fillers & Reinforcements
@@ -934,7 +946,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2836.5',
     grades: ['325 Mesh', '800 Mesh'],
     useCase: 'Filler for plastics, paints, rubbers.',
-    image: mineralFillersImg
+    image: pvcPowderImg
   },
   {
     id: 'fr-2',
@@ -952,7 +964,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2811.22',
     grades: ['AEROSIL 200', 'R972'],
     useCase: 'Thickening agent, reinforcing filler.',
-    image: mineralFillersImg
+    image: metalOxidesImg
   },
   {
     id: 'fr-4',
@@ -970,7 +982,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2833.27',
     grades: ['325 Mesh'],
     useCase: 'Filler for coatings, plastics, rubber.',
-    image: mineralFillersImg
+    image: metalOxidesImg
   },
   {
     id: 'fr-6',
@@ -979,7 +991,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2507',
     grades: ['325 Mesh', 'Calcined Kaolin'],
     useCase: 'Used in PVC cables, EVA, rubber, and paint for opacity and reinforcement.',
-    image: mineralFillersImg
+    image: pvcPowderImg
   },
   {
     id: 'fr-7',
@@ -988,7 +1000,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2519.9',
     grades: ['Light Grade', '85%', '92%'],
     useCase: 'Used as a curing and reinforcing filler in rubber and PU formulations.',
-    image: mineralFillersImg
+    image: metalOxidesImg
   },
   {
     id: 'fr-8',
@@ -1006,7 +1018,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '7019.9',
     grades: ['Milled', 'Chopped', 'Spheres'],
     useCase: 'Reinforcement for high-strength plastic, rubber, and PU composites.',
-    image: mineralFillersImg
+    image: pePelletsImg
   },
   {
     id: 'fr-10',
@@ -1024,7 +1036,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: 'Varies',
     grades: ['Surface Modified Grades'],
     useCase: 'Enhanced compatibility with polymers in high-end plastics and rubbers.',
-    image: mineralFillersImg
+    image: metalOxidesImg
   },
 
   // 10. Pigments & Colorants
@@ -1035,7 +1047,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2823',
     grades: ['R-902', 'R-706'],
     useCase: 'Paints, plastics, coatings.',
-    image: pigmentPowdersImg
+    image: metalOxidesImg
   },
   {
     id: 'pc-2',
@@ -1044,7 +1056,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2821.1',
     grades: ['130', '920', '330'],
     useCase: 'Construction, coatings, plastics.',
-    image: pigmentPowdersImg
+    image: pigmentsRawImg
   },
   {
     id: 'pc-3',
@@ -1071,7 +1083,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2803',
     grades: ['N220', 'N330', 'N550', 'N660'],
     useCase: 'Rubber reinforcement, inks, plastics.',
-    image: pigmentPowdersImg
+    image: engineeringPlasticsImg
   },
   {
     id: 'pc-6',
@@ -1080,7 +1092,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3206.41',
     grades: ['Medium Chrome', 'Lemon Chrome'],
     useCase: 'Paints, plastics, coatings.',
-    image: pigmentPowdersImg
+    image: blowingAgentImg
   },
   {
     id: 'pc-7',
@@ -1089,7 +1101,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3204.17',
     grades: ['Red 2B', 'Red F3RK', 'Yellow HR'],
     useCase: 'Used in plastics (PVC, EVA), PU coatings, masterbatches, and inks.',
-    image: pigmentPowdersImg
+    image: pigmentsRawImg
   },
   {
     id: 'pc-8',
@@ -1107,7 +1119,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3206.49',
     grades: ['Silver', 'Gold', 'Interference Types'],
     useCase: 'Decorative coatings, cosmetics, PVC films, EVA soles.',
-    image: pigmentPowdersImg
+    image: mineralFillersImg
   },
   {
     id: 'pc-10',
@@ -1116,7 +1128,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3204.17',
     grades: ['Red', 'Yellow', 'Green', 'Orange'],
     useCase: 'High-visibility plastics and PU coatings, safety applications.',
-    image: pigmentPowdersImg
+    image: blowingAgentImg
   },
   {
     id: 'pc-11',
@@ -1125,7 +1137,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3206.49',
     grades: ['Industrial Grade'],
     useCase: 'High-performance pigment for automotive coatings, plastics, PU.',
-    image: pigmentPowdersImg
+    image: blowingAgentImg
   },
   {
     id: 'pc-12',
@@ -1134,7 +1146,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3206.42',
     grades: ['B301', 'B311'],
     useCase: 'White pigment alternative to TiO₂ in plastics, rubber, EVA.',
-    image: pigmentPowdersImg
+    image: metalOxidesImg
   },
 
   // 11. Solvents
@@ -1145,7 +1157,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2905.16',
     grades: ['Industrial Grade'],
     useCase: 'Raw material for plasticizers, coatings.',
-    image: chemicalSolventsImg
+    image: plasticizerLiquidImg
   },
   {
     id: 'sol-2',
@@ -1154,7 +1166,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2902.3',
     grades: ['Industrial Grade'],
     useCase: 'Coatings, adhesives, chemical feedstock.',
-    image: chemicalSolventsImg
+    image: solventsRawImg
   },
   {
     id: 'sol-3',
@@ -1217,7 +1229,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2902.9',
     grades: ['Industrial Grade'],
     useCase: 'Intermediate for dyes, mothballs, plasticizers.',
-    image: chemicalSolventsImg
+    image: ptaPowderImg
   },
   {
     id: 'sol-10',
@@ -1289,7 +1301,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2710.19',
     grades: ['Pharma Grade', 'Industrial Grade'],
     useCase: 'Cosmetics, pharmaceuticals, plastics, textile lubricants.',
-    image: chemicalSolventsImg
+    image: plasticizerLiquidImg
   },
   {
     id: 'sol-18',
@@ -1325,7 +1337,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2905.45',
     grades: ['USP Grade', 'Industrial Grade'],
     useCase: 'Cosmetics, pharma, antifreeze, food industry.',
-    image: chemicalSolventsImg
+    image: polyurethaneLiquidImg
   },
 
   // 12. Specialty Chemicals
@@ -1345,7 +1357,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2918.14',
     grades: ['Anhydrous', 'Monohydrate'],
     useCase: 'Food additive, cleaning agent.',
-    image: chemicalSolventsImg
+    image: ptaPowderImg
   },
   {
     id: 'sc-3',
@@ -1363,7 +1375,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3911.1',
     grades: ['Industrial Grade'],
     useCase: 'Adhesives, coatings, rubber compounding, road marking paints.',
-    image: chemicalSolventsImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'sc-5',
@@ -1372,7 +1384,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '3909.4',
     grades: ['Industrial Grade'],
     useCase: 'Molding compounds, coatings, adhesives, and laminates.',
-    image: chemicalSolventsImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'sc-6',
@@ -1381,7 +1393,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2712.9',
     grades: ['Industrial Grade', 'General Grade'],
     useCase: 'Used in candles, rubber processing, coatings, polishes.',
-    image: chemicalSolventsImg
+    image: pvcPowderImg
   },
   {
     id: 'sc-7',
@@ -1390,7 +1402,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '1513.11',
     grades: ['Crude', 'Refined'],
     useCase: 'Food, cosmetics, surfactants, lubricants.',
-    image: chemicalSolventsImg
+    image: polyurethaneLiquidImg
   },
   {
     id: 'sc-8',
@@ -1399,7 +1411,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2916.31',
     grades: ['Industrial Grade'],
     useCase: 'Food preservative, plasticizers.',
-    image: chemicalSolventsImg
+    image: ptaPowderImg
   },
   {
     id: 'sc-9',
@@ -1417,7 +1429,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2909.41',
     grades: ['Industrial Grade'],
     useCase: 'Polyurethane, unsaturated polyester resins.',
-    image: chemicalSolventsImg
+    image: plasticizerLiquidImg
   },
   {
     id: 'sc-11',
@@ -1426,7 +1438,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2905.45',
     grades: ['99.7% USP', 'Technical Grade'],
     useCase: 'Cosmetics, pharmaceuticals, antifreeze.',
-    image: chemicalSolventsImg
+    image: polyurethaneLiquidImg
   },
 
   // 13. Anhydrides & Oxides
@@ -1437,7 +1449,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917.35',
     grades: ['Industrial Grade'],
     useCase: 'Plasticizers, alkyd resins, dyes.',
-    image: metalOxidesImg
+    image: ptaPowderImg
   },
   {
     id: 'ao-2',
@@ -1446,7 +1458,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2917.14',
     grades: ['Industrial Grade'],
     useCase: 'Unsaturated polyester resins, coatings.',
-    image: metalOxidesImg
+    image: ptaPowderImg
   },
   {
     id: 'ao-3',
@@ -1482,7 +1494,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2522.1',
     grades: ['Industrial Grade'],
     useCase: 'Filler in rubber, plastics; desiccant; pH control in PVC processing.',
-    image: metalOxidesImg
+    image: pvcPowderImg
   },
   {
     id: 'ao-7',
@@ -1491,7 +1503,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2811.22',
     grades: ['Precipitated', 'Fumed', 'Crystalline'],
     useCase: 'Reinforcement in rubber, EVA foaming, and as a matting agent in paints.',
-    image: metalOxidesImg
+    image: mineralFillersImg
   },
   {
     id: 'ao-8',
@@ -1509,7 +1521,7 @@ export const chemicalProducts: ChemicalProduct[] = [
     hsCode: '2810',
     grades: ['Industrial Grade'],
     useCase: 'Glass, ceramics, and additives for heat resistance in plastics/rubber.',
-    image: metalOxidesImg
+    image: mineralFillersImg
   },
   {
     id: 'ao-10',
@@ -1521,4 +1533,3 @@ export const chemicalProducts: ChemicalProduct[] = [
     image: metalOxidesImg
   }
 ];
-

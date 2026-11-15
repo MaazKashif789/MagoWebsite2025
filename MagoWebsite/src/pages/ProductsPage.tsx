@@ -143,29 +143,34 @@ const ProductsPage: React.FC = () => {
               className="rounded-xl overflow-hidden bg-[#0B0F17] border border-white/[0.07] hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:shadow-[var(--color-primary)]/5"
             >
               <div>
-                {/* Minimalist Image Header */}
-                <div className="relative h-36 w-full overflow-hidden bg-[#070A0F]">
+                {/* Image Header with Clean Aspect */}
+                <div className="relative h-40 w-full overflow-hidden bg-[#070A0F]">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/25 to-transparent" />
                   
-                  {/* Category Pill */}
-                  <span className="absolute top-2.5 left-2.5 text-[10px] font-mono tracking-wider uppercase bg-[#090D14]/85 backdrop-blur-md px-2 py-0.5 rounded text-slate-300 border border-white/10">
+                  {/* Subtle Category Badge on Photo */}
+                  <span className="absolute top-3 left-3 text-[10px] font-mono tracking-wider uppercase bg-[#090D14]/85 backdrop-blur-md px-2.5 py-0.5 rounded text-slate-300 border border-white/10">
                     {product.category}
-                  </span>
-
-                  {/* HS Code Pill */}
-                  <span className="absolute top-2.5 right-2.5 text-[10px] font-mono bg-[var(--color-primary)]/15 backdrop-blur-md text-[var(--color-primary)] border border-[var(--color-primary)]/25 px-2 py-0.5 rounded font-medium">
-                    HS: {product.hsCode}
                   </span>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-5">
-                  <h3 className="text-base font-bold text-white group-hover:text-[var(--color-primary)] transition-colors mb-2 line-clamp-1">
+                  {/* HS Code Row - Dedicated & Never Collides */}
+                  <div className="flex items-center justify-between gap-2 mb-2 text-[11px] font-mono">
+                    <span className="text-[10px] font-mono text-[var(--color-primary)] bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/25 px-2 py-0.5 rounded font-medium">
+                      HS: {product.hsCode}
+                    </span>
+                    <span className="text-[10px] text-slate-500 font-mono">
+                      CoA Verified
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-white group-hover:text-[var(--color-primary)] transition-colors mb-2 line-clamp-2 min-h-[3rem] leading-snug">
                     {product.name}
                   </h3>
 
