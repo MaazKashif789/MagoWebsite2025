@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import hero1 from '../../assets/Hero/containers.jpg';
 import hero2 from '../../assets/Hero/Hero Image 2.jpg';
 import hero3 from '../../assets/Hero/Hero Image 1.jpg';
+import magoLogo from '../../assets/Logo/mago_white.png';
 import { Button } from "@/components/ui/button";
 import { MolecularHeroCanvas } from '../3d/MolecularHeroCanvas';
 import { ArrowRight, Globe } from 'lucide-react';
@@ -46,6 +47,15 @@ const Hero: React.FC = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+        {/* Brand Logo in Hero Header */}
+        <div className="mb-5 flex justify-center">
+          <img
+            src={magoLogo}
+            alt="Mago Enterprises (PVT) LTD"
+            className="h-12 sm:h-14 md:h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(41,199,2,0.25)]"
+          />
+        </div>
+
         {/* Minimalist Origin Badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] animate-pulse" />

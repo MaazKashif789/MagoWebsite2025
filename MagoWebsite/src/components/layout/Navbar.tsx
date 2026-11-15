@@ -70,12 +70,12 @@ const Navbar: React.FC = () => {
           <a
             href={location.pathname === '/' ? '#hero' : '/'}
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center"
+            className="flex items-center gap-2.5 group"
           >
             <img
               src={logo}
               alt="Mago Enterprises (PVT) LTD"
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             />
           </a>
 

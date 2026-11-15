@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Search, Filter, FlaskConical, ArrowRight, ShieldCheck, Layers, FileSpreadsheet } from 'lucide-react';
 import { chemicalProducts, PRODUCT_CATEGORIES, type ChemicalProduct } from '../data/products';
+import magoLogo from '../assets/Logo/mago_white.png';
 
 const ProductsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -32,9 +33,17 @@ const ProductsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#090D14] text-slate-100 pt-20 pb-20">
       {/* Header Banner */}
-      <div className="py-14 bg-[#0B0F18] border-b border-white/[0.06]">
+      <div className="py-12 bg-[#0B0F18] border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-3">
+          {/* Official Logo in Header */}
+          <div className="flex justify-center mb-5">
+            <img
+              src={magoLogo}
+              alt="Mago Enterprises"
+              className="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_2px_12px_rgba(41,199,2,0.15)]"
+            />
+          </div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
             <span>Mago Enterprises (PVT) LTD • Sourcing the Corner of the Globe</span>
           </div>
