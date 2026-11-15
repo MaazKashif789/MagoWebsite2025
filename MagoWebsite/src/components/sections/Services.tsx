@@ -1,77 +1,81 @@
 // src/components/sections/Services.tsx
 import React from 'react';
-import csIcon from '../../assets/services/cs.png';
-import srqcIcon from '../../assets/services/srqc.png';
-import srcIcon from '../../assets/services/src.png';
-import spmIcon from '../../assets/services/spm.png';
-import { ArrowRight, Handshake, Globe2, ShieldCheck, TrendingUp, Building, CheckCircle2 } from 'lucide-react';
+import {
+  Headset,
+  ShieldCheck,
+  Globe,
+  PackageCheck,
+  Check,
+  Handshake,
+  TrendingUp,
+  ArrowRight
+} from 'lucide-react';
 
 const Services: React.FC = () => {
   const distributionStrengths = [
     {
       step: '01',
       title: 'Customer Service',
-      icon: csIcon,
-      highlight: 'Proactive shipment & order tracking',
+      description: 'Dedicated regional teams providing proactive shipment tracking and customized logistics.',
+      icon: Headset,
       points: [
-        'Dedicated regional teams focused on servicing customer orders',
-        'Unique solutions based on customer’s specific logistical requirements',
-        'Proactive communication of product availability and shipment progress'
+        'Dedicated regional teams focused on customer orders',
+        'Custom logistical solutions tailored to plant requirements',
+        'Proactive real-time communication on shipment progress'
       ]
     },
     {
       step: '02',
-      title: 'Safety, Regulatory & Quality Control',
-      icon: srqcIcon,
-      highlight: 'Strict CoA & sample verification',
+      title: 'Safety & Quality Control',
+      description: 'Rigorous sample verification and adherence to international regulatory standards.',
+      icon: ShieldCheck,
       points: [
-        'Dedicated managers ensuring products meet all technical and industry standards',
-        'Rigorous quality control system for all product samples and incoming batches',
-        'Full compliance with international safety and environmental regulations'
+        'Dedicated managers ensuring strict industry standards',
+        'Sample testing and verified Certificate of Analysis (CoA)',
+        'Full compliance with global safety & REACH regulations'
       ]
     },
     {
       step: '03',
       title: 'Global Sourcing',
-      icon: srcIcon,
-      highlight: '4 strategic locations in Pakistan',
+      description: 'Direct partnerships with primary synthesis plants across the Pacific Rim and worldwide.',
+      icon: Globe,
       points: [
-        'Full-time teams in four strategic locations across Pakistan',
-        'Daily operational interaction with primary manufacturing partners',
-        'Synergy across sales offices and international sourcing hubs',
-        'On-site auditing of new manufacturing partners for quality and reliability'
+        'Full-time operating teams in 4 locations across Pakistan',
+        'Daily operational interaction with manufacturing partners',
+        'Strict auditing of new suppliers for quality & reliability'
       ]
     },
     {
       step: '04',
-      title: 'Sales & Product Management',
-      icon: spmIcon,
-      highlight: 'End-to-end distribution & warehousing',
+      title: 'Product Management',
+      description: 'End-to-end distribution oversight, tailored grades, and demand-cycle warehousing.',
+      icon: PackageCheck,
       points: [
-        'Dedicated team of seasoned professionals administering the entire distribution cycle',
-        'Custom-tailored raw material formulations designed to meet customer needs',
-        'Efficient domestic warehousing of chemicals aligned with customers’ demand cycle'
+        'Seasoned specialists administering full distribution cycle',
+        'Custom-tailored raw material solutions for manufacturers',
+        'Efficient domestic warehousing aligned with demand cycles'
       ]
     }
   ];
 
   const whatWeDoServices = [
     {
-      title: 'Indentor & Transparent Commercial Bridge',
+      title: 'Indentor & Commercial Intermediary',
       description:
-        'The core of what we do at Mago is to serve as an indispensable bridge between esteemed industrial customers in Pakistan and trusted global chemical manufacturers. We take pride in delivering optimal commercial terms, acting as a reliable, transparent, and trusted intermediary.',
+        'Serving as an indispensable bridge between domestic manufacturers and global chemical producers. Delivering optimal CIF/FOB terms with complete commercial transparency.',
       icon: Handshake
     },
     {
-      title: 'Market Representation & Agency Services',
+      title: 'Market Representation & Agency',
       description:
-        'We offer premier marketing and local distribution representation for international chemical synthesis plants looking to establish and scale their presence in the rapidly expanding Pakistani industrial market.',
-      icon: Globe2
+        'Exclusive marketing and technical representation for premier international chemical synthesis plants looking to establish or scale operations in the Pakistani market.',
+      icon: Globe
     },
     {
-      title: 'Deep Global Market Intelligence',
+      title: 'Global Market Intelligence',
       description:
-        'Beyond the items of commerce themselves, we provide actionable intelligence into the global chemical landscape: geopolitical supply factors, tariff shifts, raw material feedstock cycles, and producer viability.',
+        'Actionable insight into feedstock positions, geopolitical tariffs, production cycles, and producer viability to de-risk our clients’ procurement decisions.',
       icon: TrendingUp
     }
   ];
@@ -84,100 +88,102 @@ const Services: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 pb-6 border-b border-white/[0.06]">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
               <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)] font-mono">
-                Core Capabilities & Indenting Services
+                Core Capabilities
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-              Distribution Strengths & Market Representation
+              Distribution Strengths & Indenting Services
             </h2>
             <p className="text-slate-400 text-sm max-w-xl mt-1.5 font-light leading-relaxed">
-              Serving as a reliable bridge between world-class chemical manufacturers and Pakistan’s foremost manufacturers in footwear, rubber, leather, plastics, and coatings.
+              Bridging premier global chemical producers with Pakistan’s manufacturing leaders in footwear, rubber, leather, plastics, and coatings.
             </p>
           </div>
           
           <a
             href="#contact"
-            className="self-start md:self-end px-5 py-2.5 rounded-lg bg-white/[0.04] hover:bg-[var(--color-primary)] text-slate-300 hover:text-slate-950 font-semibold text-xs tracking-wider uppercase transition-all duration-200 border border-white/[0.08]"
+            className="self-start md:self-end px-4 py-2 rounded-lg bg-white/[0.04] hover:bg-[var(--color-primary)] text-slate-300 hover:text-slate-950 font-semibold text-xs tracking-wider uppercase transition-all duration-200 border border-white/[0.08]"
           >
             Partner With Mago
           </a>
         </div>
 
-        {/* 4 Pillars of Distribution Strengths */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {distributionStrengths.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-xl bg-[#0B0F17] border border-white/[0.08] hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg"
-            >
-              <div>
-                {/* Header with step number and icon */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-[var(--color-primary)] font-bold tracking-wider">
-                    {item.step}
-                  </span>
-                  <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/[0.08] p-2 flex items-center justify-center group-hover:border-[var(--color-primary)]/30 transition-colors">
-                    <img src={item.icon} alt={item.title} className="w-full h-full object-contain filter brightness-90 group-hover:brightness-100" />
-                  </div>
-                </div>
-
-                <h3 className="text-base font-bold text-white mb-1 group-hover:text-[var(--color-primary)] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-[11px] font-mono text-[var(--color-primary)]/80 mb-4">
-                  {item.highlight}
-                </p>
-
-                {/* Bullet points */}
-                <ul className="space-y-2.5 text-xs text-slate-300 font-light">
-                  {item.points.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0 mt-1.5" />
-                      <span className="leading-relaxed">{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* What We Do / Indenting Bridge Banner */}
-        <div className="p-8 sm:p-10 rounded-2xl minimal-card border border-white/10 relative overflow-hidden">
-          <div className="relative z-10">
-            <div className="max-w-2xl mb-8">
-              <span className="text-xs font-semibold tracking-wider uppercase text-[var(--color-primary)]">
-                What We Do
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">
-                A Transparent Bridge Between Global Producers & Local Industry
-              </h3>
-              <p className="text-sm text-slate-300 mt-2 font-light leading-relaxed">
-                Whether our clients require raw materials for the footwear, rubber, leather, plastics, or paint industries, we possess the knowledge, direct plant relationships, and supply chain resources to meet their needs and exceed expectations.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {whatWeDoServices.map((service, idx) => {
-                const Icon = service.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-5 rounded-xl bg-[#090D14]/80 border border-white/[0.06] hover:border-white/[0.15] transition-all"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center mb-4">
+        {/* 4 Minimalist Distribution Strengths Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+          {distributionStrengths.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="p-6 rounded-xl bg-[#0B0F17] border border-white/[0.07] hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:shadow-[var(--color-primary)]/5"
+              >
+                <div>
+                  {/* Top Row: Clean SVG Icon & Step Index */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center border border-[var(--color-primary)]/20 group-hover:bg-[var(--color-primary)] group-hover:text-slate-950 transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h4 className="text-sm font-bold text-white mb-2">{service.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed font-light">
-                      {service.description}
-                    </p>
+                    <span className="text-[11px] font-mono text-slate-500 font-semibold tracking-wider">
+                      {item.step} / 04
+                    </span>
                   </div>
-                );
-              })}
-            </div>
+
+                  {/* Title & Concise Summary */}
+                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-[var(--color-primary)] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-400 font-light leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+
+                  {/* Minimalist Feature List */}
+                  <div className="space-y-2 pt-3 border-t border-white/[0.05]">
+                    {item.points.map((pt, pIdx) => (
+                      <div key={pIdx} className="flex items-start gap-2 text-xs text-slate-300 font-light">
+                        <Check className="w-3.5 h-3.5 text-[var(--color-primary)] shrink-0 mt-0.5" />
+                        <span className="leading-snug">{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Minimalist What We Do / Indenting Banner */}
+        <div className="p-7 sm:p-8 rounded-xl bg-[#090D14] border border-white/[0.07] relative overflow-hidden">
+          <div className="max-w-2xl mb-6">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--color-primary)] font-semibold">
+              Market Role
+            </span>
+            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
+              A Transparent Bridge Between Global Producers & Domestic Industry
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-400 mt-2 font-light leading-relaxed">
+              We empower local manufacturers with verified global chemical access, while offering international principals dedicated sales representation in Pakistan.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {whatWeDoServices.map((service, idx) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-5 rounded-lg bg-[#0D121D] border border-white/[0.05] hover:border-white/[0.12] transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-md bg-[var(--color-primary)]/10 text-[var(--color-primary)] flex items-center justify-center mb-3">
+                    <Icon className="w-4 h-4" />
+                  </div>
+                  <h4 className="text-sm font-semibold text-white mb-1.5">{service.title}</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed font-light">
+                    {service.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
 

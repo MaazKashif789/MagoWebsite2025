@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
-import { Search, Filter, FlaskConical, ArrowRight, CheckCircle2, ShieldCheck, Layers, FileSpreadsheet } from 'lucide-react';
+import { Search, Filter, FlaskConical, ArrowRight, ShieldCheck, Layers, FileSpreadsheet } from 'lucide-react';
 import { chemicalProducts, PRODUCT_CATEGORIES, type ChemicalProduct } from '../data/products';
 
 const ProductsPage: React.FC = () => {
@@ -24,7 +24,6 @@ const ProductsPage: React.FC = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Calculate count per category
   const getCategoryCount = (category: string) => {
     if (category === 'All Categories') return chemicalProducts.length;
     return chemicalProducts.filter(p => p.category === category).length;
@@ -137,49 +136,49 @@ const ProductsPage: React.FC = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="rounded-xl overflow-hidden bg-[#0B0F17] border border-white/[0.08] hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-2xl hover:shadow-[var(--color-primary)]/5"
+              className="rounded-xl overflow-hidden bg-[#0B0F17] border border-white/[0.07] hover:border-[var(--color-primary)]/40 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:shadow-[var(--color-primary)]/5"
             >
               <div>
-                {/* Image Header with Category Badge */}
-                <div className="relative h-40 w-full overflow-hidden bg-[#070A0F]">
+                {/* Minimalist Image Header */}
+                <div className="relative h-36 w-full overflow-hidden bg-[#070A0F]">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-[#0B0F17]/30 to-transparent" />
                   
                   {/* Category Pill */}
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-semibold bg-slate-950/85 backdrop-blur-md text-slate-200 border border-white/10">
+                  <span className="absolute top-2.5 left-2.5 text-[10px] font-mono tracking-wider uppercase bg-[#090D14]/85 backdrop-blur-md px-2 py-0.5 rounded text-slate-300 border border-white/10">
                     {product.category}
                   </span>
 
                   {/* HS Code Pill */}
-                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[10px] font-mono bg-[var(--color-primary)]/20 backdrop-blur-md text-[var(--color-primary)] border border-[var(--color-primary)]/30 font-semibold">
+                  <span className="absolute top-2.5 right-2.5 text-[10px] font-mono bg-[var(--color-primary)]/15 backdrop-blur-md text-[var(--color-primary)] border border-[var(--color-primary)]/25 px-2 py-0.5 rounded font-medium">
                     HS: {product.hsCode}
                   </span>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-5">
-                  <h3 className="text-base font-bold text-white group-hover:text-[var(--color-primary)] transition-colors mb-2.5 line-clamp-2">
+                  <h3 className="text-base font-bold text-white group-hover:text-[var(--color-primary)] transition-colors mb-2 line-clamp-1">
                     {product.name}
                   </h3>
 
-                  {/* Grades Pills */}
+                  {/* Grades Hairline Tags */}
                   <div className="mb-3">
-                    <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400 block mb-1">
+                    <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 block mb-1">
                       Available Grades:
                     </span>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1">
                       {product.grades.map((grade, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] px-2 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] text-slate-300 font-mono"
+                          className="text-[10px] px-2 py-0.5 rounded bg-white/[0.02] border border-white/[0.06] text-slate-300 font-mono"
                         >
                           {grade}
                         </span>
@@ -187,12 +186,12 @@ const ProductsPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Use Cases / Applications */}
-                  <div className="pt-2 border-t border-white/[0.06]">
-                    <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400 block mb-1">
-                      Primary Use Cases & Applications:
+                  {/* Use Cases */}
+                  <div className="pt-2.5 border-t border-white/[0.05]">
+                    <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 block mb-1">
+                      Applications:
                     </span>
-                    <p className="text-xs text-slate-300 leading-relaxed font-light">
+                    <p className="text-xs text-slate-400 leading-relaxed font-light line-clamp-2">
                       {product.useCase}
                     </p>
                   </div>
@@ -203,7 +202,7 @@ const ProductsPage: React.FC = () => {
               <div className="p-5 pt-0">
                 <a
                   href="/#contact"
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-white/[0.04] hover:bg-[var(--color-primary)] text-slate-200 hover:text-slate-950 font-semibold text-xs tracking-wider uppercase transition-all duration-200 border border-white/[0.08] hover:border-[var(--color-primary)] shadow-sm"
+                  className="w-full flex items-center justify-center gap-1.5 py-2 rounded-lg bg-white/[0.03] hover:bg-[var(--color-primary)] text-slate-300 hover:text-slate-950 font-medium text-xs tracking-wider uppercase transition-all duration-200 border border-white/[0.06] hover:border-[var(--color-primary)]"
                 >
                   <span>Request Quote & Specs</span>
                   <ArrowRight className="w-3.5 h-3.5" />
